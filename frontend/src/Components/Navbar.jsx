@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { FaBars, FaTimes } from "react-icons/fa";
-import { FaChevronRight, FaChevronDown } from "react-icons/fa";
+import { FaBars, FaTimes, FaChevronRight, FaChevronDown } from "react-icons/fa";
+import { motion, AnimatePresence } from "framer-motion";
 import logo from "../assets/images/mslogo.png";
 
 const Navbar = () => {
@@ -11,11 +11,28 @@ const Navbar = () => {
     setIsOpen(!isOpen);
   };
 
-  const toggleSubMenu = (link) => {
-    if (expandedLink === link) {
-      setExpandedLink(null);
-    } else {
+  const handleMouseEnter = (link) => {
+    if (window.innerWidth >= 768) {
+      // Check if on large screens
       setExpandedLink(link);
+    }
+  };
+
+  const handleMouseLeave = () => {
+    if (window.innerWidth >= 768) {
+      // Check if on large screens
+      setExpandedLink(null);
+    }
+  };
+
+  const toggleSubMenu = (link) => {
+    if (window.innerWidth < 768) {
+      // Check if on small screens
+      if (expandedLink === link) {
+        setExpandedLink(null);
+      } else {
+        setExpandedLink(link);
+      }
     }
   };
 
@@ -28,18 +45,20 @@ const Navbar = () => {
         >
           {isOpen ? <FaTimes /> : <FaBars />}
         </button>
-        <ul
-          className={`md:flex md:items-center md:space-x-6 absolute md:static   mt-7 md:mt-0 w-full md:w-auto transition-transform duration-300 ease-in-out ${
-            isOpen ? "translate-x-0 mt-4" : "translate-x-full"
-          } md:translate-x-0 top-16 left-0 md:top-auto md:left-auto`}
-        >
+        <div className="hidden md:flex md:items-center md:space-x-6">
           {["من نحن", "الخدمات", "المدونة", "تواصل معنا"].map((item, index) => (
-            <li key={index} className="relative group">
+            <div
+              key={index}
+              className="relative group"
+              onMouseEnter={() => handleMouseEnter(item)}
+              onMouseLeave={handleMouseLeave}
+            >
               <button
                 onClick={() => toggleSubMenu(item)}
                 className="flex items-center justify-between w-full p-4 hover:bg-gray-200 rounded-md transition-colors duration-300 text-left md:text-center"
               >
                 <span>{item}</span>
+                {/* Show arrows only on small screens */}
                 <span className="md:hidden">
                   {expandedLink === item ? (
                     <FaChevronDown />
@@ -48,31 +67,97 @@ const Navbar = () => {
                   )}
                 </span>
               </button>
-              <ul
-                className={`bg-whiteColor text-gray-800   md:w-[200px] md:mt-0 md:absolute md:right-0 md:top-full border-t md:border-none md:group-hover:block ${
-                  expandedLink === item ? "block" : "hidden"
-                }`}
-              >
-                <li>
-                  <a
-                    href={`#${item.toLowerCase()}1`}
-                    className="block p-4 hover:bg-gray-200 rounded-md transition-colors duration-300"
+              <AnimatePresence>
+                {expandedLink === item && (
+                  <motion.ul
+                    initial={{ opacity: 0, height: 0 }}
+                    animate={{ opacity: 1, height: "auto" }}
+                    exit={{ opacity: 0, height: 0 }}
+                    transition={{ duration: 0.3 }}
+                    className="bg-whiteColor text-gray-800 md:w-[200px] md:mt-0 md:absolute md:right-0 md:top-full border-t md:border-none"
                   >
-                    الرؤية والرسالة والقيم
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href={`#${item.toLowerCase()}2`}
-                    className="block p-4 hover:bg-gray-200 rounded-md transition-colors duration-300"
-                  >
-                    الوعد والقانون
-                  </a>
-                </li>
-              </ul>
-            </li>
+                    <li>
+                      <a
+                        href={`#${item.toLowerCase()}1`}
+                        className="block p-4 hover:bg-gray-200 rounded-md transition-colors duration-300"
+                      >
+                        الرؤية والرسالة والقيم
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href={`#${item.toLowerCase()}2`}
+                        className="block p-4 hover:bg-gray-200 rounded-md transition-colors duration-300"
+                      >
+                        الوعد والقانون
+                      </a>
+                    </li>
+                  </motion.ul>
+                )}
+              </AnimatePresence>
+            </div>
           ))}
-        </ul>
+        </div>
+        <AnimatePresence>
+          {isOpen && (
+            <motion.ul
+              initial={{ x: "100%" }}
+              animate={{ x: 0 }}
+              exit={{ x: "100%" }}
+              transition={{ type: "spring", stiffness: 300, damping: 30 }}
+              className="md:hidden absolute mt-7 w-full top-16 left-0 bg-whiteColor shadow-lg"
+            >
+              {["من نحن", "الخدمات", "المدونة", "تواصل معنا"].map(
+                (item, index) => (
+                  <li key={index} className="relative group">
+                    <button
+                      onClick={() => toggleSubMenu(item)}
+                      className="flex items-center justify-between w-full p-4 hover:bg-gray-200 rounded-md transition-colors duration-300 text-left"
+                    >
+                      <span>{item}</span>
+                      {/* Show arrows only on small screens */}
+                      <span>
+                        {expandedLink === item ? (
+                          <FaChevronDown />
+                        ) : (
+                          <FaChevronRight />
+                        )}
+                      </span>
+                    </button>
+                    <AnimatePresence>
+                      {expandedLink === item && (
+                        <motion.ul
+                          initial={{ opacity: 0, height: 0 }}
+                          animate={{ opacity: 1, height: "auto" }}
+                          exit={{ opacity: 0, height: 0 }}
+                          transition={{ duration: 0.3 }}
+                          className="bg-whiteColor text-gray-800 border-t"
+                        >
+                          <li>
+                            <a
+                              href={`#${item.toLowerCase()}1`}
+                              className="block p-4 hover:bg-gray-200 rounded-md transition-colors duration-300"
+                            >
+                              الرؤية والرسالة والقيم
+                            </a>
+                          </li>
+                          <li>
+                            <a
+                              href={`#${item.toLowerCase()}2`}
+                              className="block p-4 hover:bg-gray-200 rounded-md transition-colors duration-300"
+                            >
+                              الوعد والقانون
+                            </a>
+                          </li>
+                        </motion.ul>
+                      )}
+                    </AnimatePresence>
+                  </li>
+                )
+              )}
+            </motion.ul>
+          )}
+        </AnimatePresence>
         <div className="font-bold h-100 object-contain w-auto">
           <img src={logo} alt="Logo" className="ml-auto" />
         </div>

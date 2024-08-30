@@ -13,21 +13,18 @@ const Navbar = () => {
 
   const handleMouseEnter = (link) => {
     if (window.innerWidth >= 768) {
-      // Check if on large screens
       setExpandedLink(link);
     }
   };
 
   const handleMouseLeave = () => {
     if (window.innerWidth >= 768) {
-      // Check if on large screens
       setExpandedLink(null);
     }
   };
 
   const toggleSubMenu = (link) => {
     if (window.innerWidth < 768) {
-      // Check if on small screens
       if (expandedLink === link) {
         setExpandedLink(null);
       } else {
@@ -37,7 +34,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-whiteColor p-1 shadow-lg sticky">
+    <nav className="bg-whiteColor p-1 shadow-lg sticky z-50 font-Aljazeera text-lg">
       <div className="flex justify-around items-center w-full">
         <button
           onClick={toggleMenu}
@@ -45,7 +42,7 @@ const Navbar = () => {
         >
           {isOpen ? <FaTimes /> : <FaBars />}
         </button>
-        <div className="hidden md:flex md:items-center md:space-x-6">
+        <div className="hidden md:flex md:items-center md:space-x-6 z-50">
           {["من نحن", "الخدمات", "المدونة", "تواصل معنا"].map((item, index) => (
             <div
               key={index}
@@ -58,7 +55,6 @@ const Navbar = () => {
                 className="flex items-center justify-between w-full p-4 hover:bg-gray-200 rounded-md transition-colors duration-300 text-left md:text-center"
               >
                 <span>{item}</span>
-                {/* Show arrows only on small screens */}
                 <span className="md:hidden">
                   {expandedLink === item ? (
                     <FaChevronDown />
@@ -74,7 +70,7 @@ const Navbar = () => {
                     animate={{ opacity: 1, height: "auto" }}
                     exit={{ opacity: 0, height: 0 }}
                     transition={{ duration: 0.3 }}
-                    className="bg-whiteColor text-gray-800 md:w-[200px] md:mt-0 md:absolute md:right-0 md:top-full border-t md:border-none"
+                    className="bg-whiteColor text-gray-800 md:w-[200px] md:mt-0 md:absolute md:right-0 md:top-full border-t md:border-none z-50"
                   >
                     <li>
                       <a
@@ -105,7 +101,7 @@ const Navbar = () => {
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
               transition={{ type: "spring", stiffness: 300, damping: 30 }}
-              className="md:hidden absolute mt-7 w-full top-16 left-0 bg-whiteColor shadow-lg"
+              className="md:hidden absolute mt-7 w-full top-16 left-0 bg-whiteColor shadow-lg z-50"
             >
               {["من نحن", "الخدمات", "المدونة", "تواصل معنا"].map(
                 (item, index) => (
@@ -115,7 +111,6 @@ const Navbar = () => {
                       className="flex items-center justify-between w-full p-4 hover:bg-gray-200 rounded-md transition-colors duration-300 text-left"
                     >
                       <span>{item}</span>
-                      {/* Show arrows only on small screens */}
                       <span>
                         {expandedLink === item ? (
                           <FaChevronDown />
@@ -131,7 +126,7 @@ const Navbar = () => {
                           animate={{ opacity: 1, height: "auto" }}
                           exit={{ opacity: 0, height: 0 }}
                           transition={{ duration: 0.3 }}
-                          className="bg-whiteColor text-gray-800 border-t"
+                          className="bg-whiteColor text-gray-800 border-t z-50"
                         >
                           <li>
                             <a
@@ -158,7 +153,7 @@ const Navbar = () => {
             </motion.ul>
           )}
         </AnimatePresence>
-        <div className="font-bold h-100 object-contain w-auto">
+        <div className="font-bold h-100 object-contain w-auto z-50">
           <img src={logo} alt="Logo" className="ml-auto" />
         </div>
       </div>

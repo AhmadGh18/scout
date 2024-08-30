@@ -7,6 +7,9 @@ export default {
         primary: "#522583",
         whiteColor: "#FFFFFF",
       },
+      fontFamily: {
+        Aljazeera: ["Aljazeera", "sans-serif"], // Add your custom font here
+      },
     },
   },
   plugins: [],

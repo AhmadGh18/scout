@@ -7,6 +7,12 @@ import img1 from "../assets/images/banner1.jpg";
 import img2 from "../assets/images/banner3.jpg";
 import Banner from "./Banner";
 import Services from "./Services";
+import InfoAboutUs from "./InfoAboutUs";
+import Projects from "./Projects";
+import Programs from "./Programs";
+import LatestNews from "./LatestNews";
+import Statistic from "./Statistic";
+import Footer from "./Footer";
 
 const Home = () => {
   return (
@@ -16,6 +22,13 @@ const Home = () => {
       <Banner />
       <Aboutus />
       <Services />
+      <InfoAboutUs />
+      <Projects />
+      <Statistic />
+      <LatestNews />
+
+      <Programs />
+      <Footer />
     </div>
   );
 };

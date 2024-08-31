@@ -34,7 +34,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-whiteColor p-1 shadow-lg sticky z-50 font-Aljazeera text-lg">
+    <nav className="bg-whiteColor p-1 shadow-lg sticky top-0 z-50 font-Aljazeera text-lg">
       <div className="flex justify-around items-center w-full">
         <button
           onClick={toggleMenu}

@@ -15,7 +15,7 @@ const Aboutus = () => {
         initial={{ opacity: 0, y: 50 }}
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
         transition={{ duration: 0.5, ease: "easeOut" }}
-        className="text-center max-w-3xl mx-auto mb-10"
+        className="text-center max-w-3xl mx-auto"
       >
         <h1 className="text-4xl font-bold text-gray-900 mb-4">من نحن</h1>
         <p className="text-lg leading-relaxed text-gray-700 mx-auto">
@@ -26,9 +26,30 @@ const Aboutus = () => {
         </p>
       </motion.div>
       <div className="flex flex-wrap justify-center gap-6">
-        <SingleAboutusdiv img={img} />
-        <SingleAboutusdiv img={img2} />
-        <SingleAboutusdiv img={img} />
+        <SingleAboutusdiv
+          img={img}
+          title="أفضل"
+          descreption="  تتمثل مهمة جمعية الكشاف المسلم في لبنان بالمساهمة في تربية الشباب من
+          خلال نظام تربوي لاكتساب القيم يرتكز على الوعد و القانون لتمكين الشباب
+          من حل المشاكل بإبداع ونزاهة لريادة حياة متوازنة لخدمة الوطن والمساعدة
+          في بناء عالم أفضل يلتزم فيه المواطنون كأفراد بأداء "
+        />
+        <SingleAboutusdiv
+          img={img2}
+          title="لخدمة"
+          descreption="  تتمثل مهمة جمعية الكشاف المسلم في لبنان بالمساهمة في تربية الشباب من
+          خلال نظام تربوي لاكتساب القيم يرتكز على الوعد و القانون لتمكين الشباب
+          من حل المشاكل بإبداع ونزاهة لريادة حياة متوازنة لخدمة الوطن والمساعدة
+          في بناء عالم أفضل يلتزم فيه المواطنون كأفراد بأداء "
+        />{" "}
+        <SingleAboutusdiv
+          img={img}
+          title="الشباب"
+          descreption="  تتمثل مهمة جمعية الكشاف المسلم في لبنان بالمساهمة في تربية الشباب من
+          خلال نظام تربوي لاكتساب القيم يرتكز على الوعد و القانون لتمكين الشباب
+          من حل المشاكل بإبداع ونزاهة لريادة حياة متوازنة لخدمة الوطن والمساعدة
+          في بناء عالم أفضل يلتزم فيه المواطنون كأفراد بأداء "
+        />
       </div>
     </div>
   );

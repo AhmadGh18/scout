@@ -4,9 +4,13 @@ import SingleService from "./SingleService";
 
 const Service = () => {
   return (
-    <div className="p-8 bg-gray-100 font-Aljazeera">
-      <h1 className="text-5xl text-center p-3">خدماتنا</h1>
-      <div className="container mx-auto">
+    <div className="p-8 bg-gray-50 font-Aljazeera mt-10">
+      <div className="flex items-center justify-center mt-0">
+        <div className="bg-primary tracking-widest text-3xl p-[300px] text-white px-4 py-2 rounded-b-full rounded-tl-none rounded-tr-none text-center md:mt-[-27px]">
+          خدماتنا{" "}
+        </div>
+      </div>{" "}
+      <div className="container mx-auto mt-10">
         <motion.div
           className="flex flex-wrap justify-center gap-4 md:ml-[200px] md:mr-[200px]"
           initial="hidden"

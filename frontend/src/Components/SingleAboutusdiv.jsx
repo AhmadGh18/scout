@@ -8,23 +8,45 @@ const SingleAboutusdiv = (props) => {
   return (
     <motion.div
       ref={ref}
-      className="relative flex flex-col items-center bg-white shadow-lg pb-5 rounded-lg max-w-sm mx-4 my-6 font-Aljazeera transition-all hover:mt-[-10px]"
+      className="relative flex flex-col  font-Aljazeera items-center bg-white shadow-lg pb-5 rounded-lg max-w-sm mx-4 my-6  transition-all mt-20"
       initial={{ opacity: 0, y: 50 }}
       animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
       transition={{ duration: 0.5, ease: "easeOut" }}
+      whileHover={{
+        scale: 1.05,
+        transition: { duration: 0.3, ease: "easeInOut" },
+        boxShadow: "0px 10px 30px rgba(0, 0, 0, 0.2)",
+      }} // Adds hover scale and shadow effect
     >
-      <img
+      <motion.img
         src={props.img}
         alt="About Us"
-        className="w-full h-40 object-cover mb-4 rounded-md transition-transform duration-300 ease-in-out "
+        className="w-full h-40 object-cover mb-4 rounded-md transition-transform duration-300 ease-in-out"
+        whileHover={{ scale: 1.1 }} // Image zooms in slightly on hover
       />
-      <div className="absolute inset-0 bg-black opacity-0  transition-opacity duration-300 rounded-lg"></div>
+      <motion.div
+        className="absolute inset-0 opacity-0 transition-opacity duration-300 rounded-lg"
+        whileHover={{ opacity: 0.1 }} // Dark overlay appears on hover
+      ></motion.div>
       <div className="relative z-10 text-center">
-        <h1 className="text-xl font-semibold mb-2 text-gray-900 ">Title</h1>
-        <p className="text-gray-600 p-3 ">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis
-          dolorum modi atque quidem sunt cum quas corrupti labore sit odio.
-        </p>
+        <motion.h1
+          className="text-xl font-semibold mb-2 text-gray-900"
+          whileHover={{
+            y: -2,
+            transition: { duration: 0.3, ease: "easeInOut" },
+          }} // Title text slightly moves up on hover
+        >
+          {props.title || "Title"}
+        </motion.h1>
+        <motion.p
+          className="text-gray-600 p-3"
+          whileHover={{
+            y: -1,
+            transition: { duration: 0.3, ease: "easeInOut" },
+          }} // Paragraph text slightly moves up on hover
+        >
+          {props.descreption}
+        </motion.p>
       </div>
     </motion.div>
   );

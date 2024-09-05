@@ -10,7 +10,7 @@ const Statistic = () => {
   return (
     <div className="py-10 px-4 sm:px-6 lg:px-8 bg-white mt-16 font-Aljazeera md:relative">
       <div className="flex items-center md:top-4 md:left-[50%] md:right-[50%] md:absolute justify-center md:mt-[-80px] mb-10">
-        <div className="bg-primary text-2xl tracking-widest p-[12px] text-white px-4 py-2 rounded-b-full rounded-tl-none rounded-tr-none text-center">
+        <div className="bg-primary text-2xl tracking-widest p-[12px] text-white px-7 py-2 rounded-b-full rounded-tl-none rounded-tr-none text-center">
           إحصائيات
         </div>
       </div>

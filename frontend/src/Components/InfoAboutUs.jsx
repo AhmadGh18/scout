@@ -50,7 +50,7 @@ const InfoAboutUs = () => {
             allowFullScreen
           ></iframe>
           <div className="absolute inset-0 flex items-center justify-center">
-            <button className="bg-purple-600 p-6 rounded-full flex items-center justify-center">
+            <button className="bg-primary p-6 rounded-full flex items-center justify-center">
               <svg
                 className="w-8 h-8 text-white"
                 fill="currentColor"
@@ -71,8 +71,8 @@ const InfoAboutUs = () => {
           animate={textControls}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          <h2 className="text-3xl font-semibold mb-4">من نحن</h2>
-          <p className="text-gray-700 tracking-wider leading-8 text-lg">
+          <h2 className="text-3xl font-semibold mb-4 text-left">من نحن</h2>
+          <p className="text-gray-500 tracking-wider leading-8 text-lg text-left">
             تتمثل مهمة جمعية الكشاف المسلم في لبنان بالمساهمة في تربية الشباب من
             خلال نظام تربوي لاكتساب القيم يرتكز على الوعد و القانون لتمكين
             الشباب من حل المشاكل بإبداع ونزاهة لريادة حياة متوازنة لخدمة الوطن
@@ -82,8 +82,8 @@ const InfoAboutUs = () => {
           <button className="relative bg-primary overflow-hidden mt-3 w-32 h-12 text-white border-none rounded-md text-xl font-bold cursor-pointer group self-center md:self-auto">
             <span className="absolute w-36 h-32 -top-8 -left-2 bg-white rotate-12 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></span>
             <span className="absolute w-36 h-32 -top-8 -left-2 bg-purple-400 rotate-12 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-700 origin-left"></span>
-            <span className="absolute w-36 h-32 -top-8 -left-2 bg-purple-600 rotate-12 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-1000 origin-left"></span>
-            <span className="relative z-10 group-hover:text-white transition-colors duration-300">
+            <span className="absolute w-36 h-32 -top-8 -left-2 bg-primary rotate-12 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-1000 origin-left"></span>
+            <span className="relative z-10 group-hover:text-white transition-colors duration-300 tracking-widest">
               برامجنا{" "}
             </span>
           </button>

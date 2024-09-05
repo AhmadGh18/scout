@@ -9,21 +9,33 @@ import {
 
 const TopNavBar = () => {
   return (
-    <div className="flex flex-col md:flex-row bg-primary items-center justify-center md:gap-8 p-4 gap-1">
-      <div className="flex text-whiteColor gap-3 text-xl md:text-2xl mb-2 md:mb-0">
-        <FaFacebook />
-        <FaInstagram />
-        <FaTwitter />
+    <div className="flex flex-col md:flex-row bg-primary items-center justify-center p-4 gap-3 md:gap-8">
+      {/* Social Media Icons */}
+      <div className="flex items-center gap-4 text-whiteColor text-xl md:text-2xl mb-2 md:mb-0">
+        <FaFacebook className="hover:text-gray-300 cursor-pointer transition-colors duration-300" />
+        <FaInstagram className="hover:text-gray-300 cursor-pointer transition-colors duration-300" />
+        <FaTwitter className="hover:text-gray-300 cursor-pointer transition-colors duration-300" />
       </div>
-      <div className="flex flex-row items-center gap-2 mb-2 md:mb-0">
-        <p className="text-whiteColor text-xs md:text-lg">
+
+      {/* Separator */}
+      <div className="hidden md:flex text-whiteColor">|</div>
+
+      {/* Email Information */}
+      <div className="flex items-center gap-2 mb-2 md:mb-0">
+        <FaEnvelope className="text-whiteColor text-lg md:text-xl" />
+        <p className="text-whiteColor text-xs md:text-base">
           info@muslimscout.org
         </p>
       </div>
-      <div className="flex flex-row items-center gap-2">
+
+      {/* Separator */}
+      <div className="hidden md:flex text-whiteColor">|</div>
+
+      {/* Location Information */}
+      <div className="flex items-center gap-2">
         <FaMapMarkerAlt className="text-whiteColor text-lg md:text-xl" />
-        <p className="text-whiteColor text-xs md:text-sm">
-          كورنيش المزرعا و بيروت
+        <p className="text-whiteColor text-xs md:text-base">
+          كورنيش المزرعا، بيروت
         </p>
       </div>
     </div>

@@ -38,7 +38,7 @@ const LatestNews = () => {
   return (
     <div className="p-4 font-Aljazeera mt-2 bg-gray-50 mt-10">
       <div className="flex items-center justify-center md:mt-[-13px]">
-        <div className="bg-primary tracking-widest text-2xl p-[12px] text-white px-4 py-2 rounded-b-full rounded-tl-none rounded-tr-none text-center">
+        <div className="bg-primary tracking-widest text-2xl p-[12px] text-white px-8 py-2 rounded-b-full rounded-tl-none rounded-tr-none text-center">
           اخر الاخبار{" "}
         </div>
       </div>{" "}

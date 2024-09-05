@@ -1,63 +1,34 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { FaCalendar } from "react-icons/fa";
+import { useInView } from "react-intersection-observer"; // Import from react-intersection
 
-const directionVariants = {
-  bottom: {
-    hidden: { opacity: 0, y: 50 },
-    visible: { opacity: 1, y: 0 },
-  },
-  left: {
-    hidden: { opacity: 0, x: -50 },
-    visible: { opacity: 1, x: 0 },
-  },
-  right: {
-    hidden: { opacity: 0, x: 50 },
-    visible: { opacity: 1, x: 0 },
-  },
-};
-
-const SingleLatestNew = ({
-  image,
-  title,
-  author,
-  date,
-  description,
-  direction,
-}) => {
+const SingleLatestNew = ({ image, title, author, date, description }) => {
   const controls = useAnimation();
-  const ref = useRef(null);
+  const { ref, inView } = useInView({ threshold: 0.1 }); // Change threshold if needed
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const rect = ref.current.getBoundingClientRect();
-      if (rect.top < window.innerHeight && rect.bottom > 0) {
-        controls.start("visible");
-      } else {
-        controls.start("hidden");
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    handleScroll(); // Initial check
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [controls]);
+  React.useEffect(() => {
+    if (inView) {
+      controls.start({ opacity: 1, y: 0 });
+    } else {
+      controls.start({ opacity: 0, y: 50 });
+    }
+  }, [inView, controls]);
 
   return (
     <motion.div
-      ref={ref}
+      ref={ref} // Attach ref from react-intersection
       className="flex flex-col border rounded-lg shadow-lg w-full md:w-1/3 lg:w-1/4 max-w-sm bg-white overflow-hidden hover:shadow-2xl transition-shadow duration-300 mt-6"
-      variants={directionVariants[direction]} // Apply animation variant based on direction
-      initial="hidden"
+      initial={{ opacity: 0, y: 50 }} // Initial state
       animate={controls}
-      transition={{ duration: 0.4, ease: "easeIn" }}
+      transition={{ duration: 0.6, ease: "easeOut" }} // Adjust duration and ease as needed
     >
       {/* Image Section */}
       <div className="flex-shrink-0">
         <img
           src={image}
           alt={title}
-          className="w-full h-48 object-cover rounded-t-lg transition-transform duration-500 ease-in-out transform hover:scale-110"
+          className="w-full h-48 object-cover rounded-t-lg transition-transform duration-300 ease-in-out transform hover:scale-105" // Adjust scale and duration
         />
       </div>
 

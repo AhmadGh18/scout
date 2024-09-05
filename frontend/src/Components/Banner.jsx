@@ -70,7 +70,7 @@ const Banner = () => {
             <button className="relative overflow-hidden mt-3 w-32 h-12 bg-white border-none rounded-md text-xl font-bold cursor-pointer text-primary group">
               <span className="absolute w-36 h-32 -top-8 -left-2 bg-white rotate-12 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></span>
               <span className="absolute w-36 h-32 -top-8 -left-2 bg-purple-400 rotate-12 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-700 origin-left"></span>
-              <span className="absolute w-36 h-32 -top-8 -left-2 bg-purple-600 rotate-12 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-1000 origin-left"></span>
+              <span className="absolute w-36 h-32 -top-8 -left-2 bg-primary rotate-12 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-1000 origin-left"></span>
               <span className="relative z-10 group-hover:text-white transition-colors duration-300">
                 تعرف علينا
               </span>
@@ -99,7 +99,7 @@ const Banner = () => {
             <button className="relative overflow-hidden mt-3 w-32 h-12 bg-white border-none rounded-md text-xl font-bold cursor-pointer text-primary group">
               <span className="absolute w-36 h-32 -top-8 -left-2 bg-white rotate-12 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></span>
               <span className="absolute w-36 h-32 -top-8 -left-2 bg-purple-400 rotate-12 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-700 origin-left"></span>
-              <span className="absolute w-36 h-32 -top-8 -left-2 bg-purple-600 rotate-12 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-1000 origin-left"></span>
+              <span className="absolute w-36 h-32 -top-8 -left-2 bg-primary rotate-12 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-1000 origin-left"></span>
               <span className="relative z-10 group-hover:text-white transition-colors duration-300">
                 تعرف علينا
               </span>
@@ -110,13 +110,13 @@ const Banner = () => {
 
       <div
         onClick={handlePrev}
-        className="hidden absolute top-1/2 left-[10%] transform -translate-y-1/2 border-2 border-white rounded-full p-3 cursor-pointer z-10 md:flex items-center justify-center shadow-lg transition-colors duration-300 ease-in-out hover:bg-purple-600"
+        className="hidden absolute top-1/2 left-[10%] transform -translate-y-1/2 border-2 border-white rounded-full p-3 cursor-pointer z-10 md:flex items-center justify-center shadow-lg transition-colors duration-300 ease-in-out hover:bg-primary"
       >
         <FaArrowAltCircleLeft className="w-6 h-6 text-white" />
       </div>
       <div
         onClick={handleNext}
-        className="hidden absolute top-1/2 right-[10%] transform -translate-y-1/2 border-2 border-white rounded-full p-3 cursor-pointer z-10 md:flex items-center justify-center shadow-lg transition-colors duration-300 ease-in-out hover:bg-purple-600"
+        className="hidden absolute top-1/2 right-[10%] transform -translate-y-1/2 border-2 border-white rounded-full p-3 cursor-pointer z-10 md:flex items-center justify-center shadow-lg transition-colors duration-300 ease-in-out hover:bg-primary"
       >
         <FaArrowAltCircleRight className="w-6 h-6 text-white" />
       </div>

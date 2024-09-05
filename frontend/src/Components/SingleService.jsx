@@ -27,11 +27,10 @@ const SingleService = ({ index }) => {
         <h1 className="text-2xl font-bold mb-2 text-center text-gray-800 group-hover:text-white">
           جلقة الكشاف
         </h1>
-        <p className="text-gray-800 transition-colors duration-300 group-hover:text-white text-center">
+        <p className="text-gray-600 leading-7 tracking-wider transition-colors duration-300 group-hover:text-white text-center">
           في قلب المدينة القديمة، تنبض الحياة بالألوان والأصوات. الشوارع الضيقة
-          تصدح بأنغام الموسيقى الشعبية، بينما تتناثر الروائح الشهية من المحلات
-          الصغيرة. يجتمع الناس في المقاهي لتبادل الأحاديث والابتسامات، وتستمر
-          الحياة في هذا المكان الساحر بمزيج من الأصالة والحداثة. ت
+          تصدح بأنغام الموسيقى الشعبية، بينما تتناثر الروائح الشهية من
+          المحلاتلناس في المقاهي لتبادل الأحاديث وتستمان الساح
         </p>
       </div>
     </motion.div>

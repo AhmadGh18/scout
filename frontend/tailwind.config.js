@@ -6,9 +6,13 @@ export default {
       colors: {
         primary: "#522583",
         whiteColor: "#FFFFFF",
+        highlight: "#E53E3E",
       },
       fontFamily: {
-        Aljazeera: ["Aljazeera", "sans-serif"], // Add your custom font here
+        Aljazeera: ["Aljazeera", "sans-serif"],
+      },
+      listStyleType: {
+        "arabic-indic": "arabic-indic",
       },
     },
   },

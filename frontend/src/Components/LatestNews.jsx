@@ -2,7 +2,7 @@ import React from "react";
 import img from "../assets/images/portfolio-3.jpg";
 import SingleLatestNew from "./SingleLatestNew";
 
-const LatestNews = () => {
+const LatestNews = (props) => {
   // Sample data to be passed as props
   const newsItems = [
     {
@@ -38,9 +38,11 @@ const LatestNews = () => {
   return (
     <div className="p-4 font-Aljazeera mt-2 bg-gray-50 mt-10">
       <div className="flex items-center justify-center md:mt-[-13px]">
-        <div className="bg-primary tracking-widest text-2xl p-[12px] text-white px-8 py-2 rounded-b-full rounded-tl-none rounded-tr-none text-center">
-          اخر الاخبار{" "}
-        </div>
+        {props.display && (
+          <div className="bg-primary tracking-widest text-2xl p-[12px] text-white px-8 py-2 rounded-b-full rounded-tl-none rounded-tr-none text-center">
+            اخر الاخبار{" "}
+          </div>
+        )}
       </div>{" "}
       <div className="flex gap-7 flex-wrap justify-center items-center md:mr-[100px] md:ml-[100px] mt-10">
         {newsItems.map((item, index) => (

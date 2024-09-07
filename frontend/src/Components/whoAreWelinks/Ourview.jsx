@@ -4,14 +4,14 @@ const Ourview = () => {
   return (
     <div className="relative text-right mt-10 font-Aljazeera flex flex-col items-end">
       {/* Container with a line on the right side */}
-      <div className="text-lg tracking-wider text-gray-800 md:mr-10 md:max-w-[80%] md:space-y-8">
+      <div className="text-lg tracking-wider text-gray-800 md:mr-8 md:max-w-[80%] md:space-y-8">
         {/* Header */}
         <div className="flex items-center justify-end w-full">
           <p className="text-5xl tracking-wider">الرؤية والرسالة والقيم</p>
         </div>
 
         {/* Main text content */}
-        <p className="text-lg leading-10 tracking-wider mt-10 text-gray-800 border-r-4 px-3 border-primary max-w-[90%] md:max-w-[80%]">
+        <p className="text-lg leading-10 tracking-wider mt-10 text-gray-800 border-r-4 px-3 border-primary max-w-[90%] md:max-w-[90%]">
           عند تأسيس الحركة الكشفية عام 1907, وضع بادن باول خُلاصةَ تجاربِه
           ليصوغَ قانوناً للكشافيكون خارطةَ طريقٍ للإهتداء بها في خدمة الفرد
           والوطن. وصاغ عبد الجبار خيري عام 1912 تلك المبادئ بما يتلاءم مع
@@ -20,7 +20,7 @@ const Ourview = () => {
           وهذه المبادئ هي:
         </p>
 
-        <div className="text-lg tracking-wider leading-10 mt-10 text-gray-800 max-w-[90%] md:max-w-[80%]">
+        <div className="text-lg tracking-wider leading-10 mt-10 text-gray-800 max-w-[90%] md:max-w-[90%]">
           <div className="p-4 border-r-4 border-primary bg-white rounded-md shadow-sm mt-10">
             <p className="text-3xl">الرؤية</p>
             <p className="leading-10">

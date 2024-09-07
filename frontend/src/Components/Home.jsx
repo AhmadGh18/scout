@@ -13,6 +13,7 @@ import Programs from "./Programs";
 import LatestNews from "./LatestNews";
 import Statistic from "./Statistic";
 import Footer from "./Footer";
+import MapChart from "./MapChart";
 
 const Home = () => {
   return (
@@ -25,10 +26,10 @@ const Home = () => {
       <InfoAboutUs />
       <Projects />
       <Statistic />
-      <LatestNews />
-
+      <LatestNews display={true} />
+      <MapChart />
       <Programs />
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 };

@@ -1,4 +1,6 @@
 import React from "react";
+import Navbar from "../Navbar";
+import LinkOfPage from "../LinkOfPage";
 
 const Administrative = () => {
   const names = [
@@ -20,23 +22,49 @@ const Administrative = () => {
   ];
 
   return (
-    <div className="relative text-right mt-10 md:mr-20 font-Aljazeera w-full flex flex-col items-end tracking-wide leading-9">
-      <div className="flex flex-col items-end relative w-full md:pr-10">
-        <div className="mb-8">
-          <p className="text-2xl font-bold mb-4 md:mr-10 mr-2 text-primary">
-            القيادة العامة 2018-2019
-          </p>
-          <p className="text-lg mb-6 md:mr-10 mr-2 text-secondary">
-            القيادة العامة لجمعية الكشاف المسلم في لبنان للعام الكشفي 2018/2019
-          </p>
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:pr-10 mb-10 mr-3">
-          {names.map((name) => (
-            <div key={name} className="flex items-center justify-end text-lg">
-              <span className="mr-2">{name}</span>
-              <span className="text-primary">•</span>
-            </div>
-          ))}
+    <div>
+      <Navbar />
+      <LinkOfPage
+        homeTitle="الهيكلية الإدارية"
+        breadcrumbs={[
+          { name: "الرئيسية", url: "/" },
+          { name: "هيكلية الجمعية", url: "/هيكلية-الجمعية" },
+          { name: " الهيكلية الإدارية", url: "" },
+        ]}
+      />
+      <div className="relative text-right mt-10 font-Aljazeera w-full flex flex-col items-end tracking-wide leading-9">
+        <div className="flex flex-col items-start relative w-full md:pr-10">
+          <div className="mb-8">
+            <p className="text-2xl font-bold mb-4 md:mr-10 mr-2 text-primary">
+              القيادة العامة 2018-2019
+            </p>
+            <p className="text-lg mb-6 md:mr-10 mr-2 text-secondary">
+              القيادة العامة لجمعية الكشاف المسلم في لبنان للعام الكشفي
+              2018/2019
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:pr-10 mb-10 mr-3">
+            <ul className="list-disc space-y-4">
+              {names.slice(0, Math.ceil(names.length / 2)).map((name) => (
+                <div
+                  key={name}
+                  className="flex items-center justify-start text-lg"
+                >
+                  <li className="mr-4">{name}</li>
+                </div>
+              ))}
+            </ul>
+            <ul className="list-disc space-y-4">
+              {names.slice(Math.ceil(names.length / 2)).map((name) => (
+                <div
+                  key={name}
+                  className="flex items-center justify-start text-lg"
+                >
+                  <li className="mr-4">{name}</li>
+                </div>
+              ))}
+            </ul>
+          </div>
         </div>
       </div>
     </div>

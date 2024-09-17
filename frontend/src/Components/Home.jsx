@@ -11,9 +11,11 @@ import InfoAboutUs from "./InfoAboutUs";
 import Projects from "./Projects";
 import Programs from "./Programs";
 import LatestNews from "./LatestNews";
-import Statistic from "./Statistic";
 import Footer from "./Footer";
 import MapChart from "./MapChart";
+import Statistic from "./Statistic";
+import TestLatestNew from "./TestLatestNew";
+import NewMedia from "../NewMedia";
 
 const Home = () => {
   return (
@@ -21,13 +23,17 @@ const Home = () => {
       <TopNavBar />
       <Navbar />
       <Banner />
-      <Aboutus />
-      <Services />
       <InfoAboutUs />
-      <Projects />
+      <TestLatestNew />
+
+      {/* <LatestNews display={true} /> */}
+
+      <Services />
+      {/* <Projects /> */}
+      <NewMedia />
       <Statistic />
-      <LatestNews display={true} />
       <MapChart />
+      {/* <TestMap /> */}
       <Programs />
       {/* <Footer /> */}
     </div>

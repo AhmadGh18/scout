@@ -14,6 +14,11 @@ export default {
       listStyleType: {
         "arabic-indic": "arabic-indic",
       },
+      variants: {
+        extend: {
+          maxHeight: ["group-hover"], // Enable maxHeight on hover
+        },
+      },
     },
   },
   plugins: [],

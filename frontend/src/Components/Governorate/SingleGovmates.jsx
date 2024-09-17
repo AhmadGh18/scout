@@ -5,13 +5,13 @@ const SingleGovmates = () => {
   return (
     <div className="flex flex-col justify-start items-end p-8 bg-gray-50 rounded-lg shadow-lg font-Aljazeera">
       {/* Header section with logo and title */}
-      <div className="flex items-center md:justify-end mb-8 flex-col-reverse md:w-full md:flex-row  w-full">
-        <p className="md:text-3xl font-bold text-gray-900">مفوضية بيروت</p>
+      <div className="flex items-center md:justify-start mb-8 flex-col md:w-full md:flex-row  w-full">
         <img
           src={logo}
           className="h-40 w-40 object-contain"
           alt="Beirut Gov Logo"
         />
+        <p className="md:text-3xl font-bold text-gray-900">مفوضية بيروت</p>
       </div>
 
       {/* History and description */}
@@ -50,7 +50,6 @@ const SingleGovmates = () => {
 
       {/* Troop information section */}
       <div className="mt-8 text-right space-y-2 text-sm flex justify-between w-full flex-wrap">
-        <img src={beirut} className="md:h-[400px]" />
         <p>
           <p className="font-bold text-gray-900">إنتشار أفواج المفوضيات</p>
           <p>Currently, there are 9 troops under Beirut's legation:</p>
@@ -121,6 +120,7 @@ const SingleGovmates = () => {
             </li>
           </ul>
         </p>
+        <img src={beirut} className="md:h-[400px]" />
       </div>
     </div>
   );

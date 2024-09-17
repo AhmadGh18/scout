@@ -1,82 +1,69 @@
 import React, { useEffect, useRef } from "react";
-import { MapContainer, TileLayer, Polygon } from "react-leaflet";
+import { MapContainer, TileLayer, GeoJSON } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
-import statesData from "./lebanonGeoJSON.json";
 import L from "leaflet";
+import governorates from "./lebanon_Governorate_level_1.json";
+import TopInfo from "./TopInfo";
 
-const center = [33.9, 35.6]; // Center coordinates adjusted to Lebanon
+const MapChart = () => {
+  const geoJsonLayer = useRef(null);
 
-export default function MapChart() {
-  const mapRef = useRef(null);
+  // Define default style
+  const geoJsonStyle = {
+    fillColor: "#522583",
+    weight: 2,
+    opacity: 1,
+    color: "white",
+    fillOpacity: 0.7,
+  };
 
-  useEffect(() => {
-    if (mapRef.current && statesData.features.length > 0) {
-      const map = mapRef.current;
-      const bounds = L.latLngBounds(
-        statesData.features.flatMap((state) =>
-          state.geometry.coordinates[0].map((coord) => [coord[1], coord[0]])
-        )
-      );
-      map.fitBounds(bounds, { padding: [50, 50] });
-    }
-  }, [statesData]);
+  // Style for hover
+  const highlightStyle = {
+    weight: 3,
+    color: "#666",
+    fillColor: "white",
+    fillOpacity: 0.8,
+  };
+
+  const highlightFeature = (e) => {
+    const layer = e.target;
+    layer.setStyle(highlightStyle);
+  };
+
+  const resetHighlight = (e) => {
+    geoJsonLayer.current.resetStyle(e.target);
+  };
+
+  // Function to handle events on each feature (governorate)
+  const onEachFeature = (feature, layer) => {
+    layer.on({
+      mouseover: highlightFeature,
+      mouseout: resetHighlight,
+    });
+  };
 
   return (
-    <MapContainer
-      center={center}
-      zoom={8} // Initial zoom level
-      style={{ width: "40vw", height: "70vh" }}
-      whenCreated={(mapInstance) => (mapRef.current = mapInstance)}
-    >
-      <TileLayer
-        url="https://api.maptiler.com/maps/aquarelle/256/{z}/{x}/{y}.webp?key=sPZtIOJiETOn37ndK8iU"
-        attribution={`<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>`}
-      />
-      {statesData.features.map((state) => {
-        const coordinates = state.geometry.coordinates[0].map((item) => [
-          item[1],
-          item[0],
-        ]);
-
-        return (
-          <Polygon
-            key={state.properties.name} // Use a unique identifier for the key
-            pathOptions={{
-              fillColor: "#FD8D3C",
-              fillOpacity: 0.7,
-              weight: 2,
-              opacity: 1,
-              dashArray: 3,
-              color: "white",
-            }}
-            positions={coordinates}
-            eventHandlers={{
-              mouseover: (e) => {
-                const layer = e.target;
-                layer.setStyle({
-                  dashArray: "",
-                  fillColor: "#BD0026",
-                  fillOpacity: 0.7,
-                  weight: 2,
-                  opacity: 1,
-                  color: "white",
-                });
-              },
-              mouseout: (e) => {
-                const layer = e.target;
-                layer.setStyle({
-                  fillOpacity: 0.7,
-                  weight: 2,
-                  dashArray: "3",
-                  color: "white",
-                  fillColor: "#FD8D3C",
-                });
-              },
-              click: (e) => {},
-            }}
-          />
-        );
-      })}
-    </MapContainer>
+    <div className="w-full sm:w-[90%] md:w-[100%] lg:w-[60%] xl:w-[50%] mx-auto p-4 relative z-0 ">
+      <TopInfo title="انتشارنا" />
+      <MapContainer
+        center={[33.8547, 35.8623]}
+        zoom={8}
+        style={{ height: "400px", width: "100%" }}
+        className="rounded-lg shadow-lg mt-12"
+      >
+        <TileLayer
+          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        />
+        <GeoJSON
+          data={governorates} // Your GeoJSON data
+          style={geoJsonStyle}
+          onEachFeature={onEachFeature}
+          ref={geoJsonLayer}
+        />
+      </MapContainer>
+    </div>
   );
-}
+};
+
+export default MapChart;

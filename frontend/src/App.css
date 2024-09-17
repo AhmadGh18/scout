@@ -1,0 +1,44 @@
+/* Style the navigation buttons container */
+
+
+/* Center navigation buttons horizontally */
+
+
+
+/* Adjust hover effects */
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+    background-color: white !important;
+    color: #512582 !important;
+}
+
+/* Customize arrow size and weight */
+.swiper-button-next::after,
+.swiper-button-prev::after {
+    font-size: 20px !important;
+    font-weight: bold;
+}
+
+
+
+.swiper-button-next,
+.swiper-button-prev {
+    background-color: #512582 !important;
+    color: white !important;
+    border-radius: 50%;
+    width: 50px !important;
+    margin-top: 1px !important;
+
+    height: 50px !important;
+    /* Ensure buttons are above slides */
+}
+
+.swiper-button-prev11 .swiper-button-next {
+    margin-top: -10px !important;
+
+}
+
+.swiper-button-prev11 .swiper-button-prev {
+    margin-top: -10px !important;
+
+}

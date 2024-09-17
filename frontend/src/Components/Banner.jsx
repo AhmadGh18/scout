@@ -56,7 +56,7 @@ const Banner = () => {
             backgroundPosition: "center",
             position: "relative",
           }}
-          className="flex items-center justify-center flex-col"
+          className="flex items-center justify-center flex-col font-Aljazeera"
         >
           <div className="absolute inset-0 bg-black opacity-80"></div>
           <div className="relative z-10 text-center">

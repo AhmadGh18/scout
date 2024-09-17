@@ -35,7 +35,7 @@ const Programms = ({ index }) => {
             },
           },
         }}
-        className="flex justify-center items-center gap-8 flex-wrap max-w-5xl mx-auto"
+        className="flex justify-center items-center flex-wrap max-w-4xl mx-auto p-3"
       >
         <SingleProgram icon={<FaFire />} title="حلقة الجوالة / دليلات" />
         <SingleProgram icon={<FaTree />} title="حلقة الأشبال / الزهرات" />

@@ -1,12 +1,15 @@
 import React from "react";
 import img from "../assets/images/portfolio-3.jpg";
-import SingleLatestNew from "./SingleLatestNew";
+import img2 from "../assets/images/group-male-friends-having-fun-spending-time-together.jpg";
+import img3 from "../assets/images/hiker-stand-camping-near-orange-tent-backpack-mountains.jpg";
+import SingleLatestNew from "./InfoInpages";
+import TopInfo from "./TopInfo";
 
 const LatestNews = (props) => {
   // Sample data to be passed as props
   const newsItems = [
     {
-      image: img,
+      image: img3,
       title: "العنوان 1",
       author: "الكاتب 1",
       date: "2024-08-31",
@@ -24,7 +27,7 @@ const LatestNews = (props) => {
       direction: "left", // Direction of animation
     },
     {
-      image: img,
+      image: img2,
       title: "العنوان 3",
       author: "الكاتب 3",
       date: "2024-08-29",
@@ -36,15 +39,16 @@ const LatestNews = (props) => {
   ];
 
   return (
-    <div className="p-4 font-Aljazeera mt-2 bg-gray-50 mt-10">
-      <div className="flex items-center justify-center md:mt-[-13px]">
-        {props.display && (
-          <div className="bg-primary tracking-widest text-2xl p-[12px] text-white px-8 py-2 rounded-b-full rounded-tl-none rounded-tr-none text-center">
-            اخر الاخبار{" "}
-          </div>
-        )}
-      </div>{" "}
-      <div className="flex gap-7 flex-wrap justify-center items-center md:mr-[100px] md:ml-[100px] mt-10">
+    <div className="p-4 font-Aljazeera mt-2 bg-gray-50 relative ">
+      <div className="flex items-center justify-center mt-4 md:mt-0">
+        <div
+          className="bg-primary text-white text-2xl p-4 mt-[-23px] md:mt-[-10px] md:px-12 md:py-4 shadow-md text-center tracking-wider font-semibold  hover:scale-105"
+          style={{ clipPath: "polygon(0 0, 100% 0, 90% 100%, 10% 100%)" }}
+        >
+          اخر الاخبار
+        </div>
+      </div>
+      <div className="flex gap-4 flex-wrap justify-center items-center  mt-10">
         {newsItems.map((item, index) => (
           <SingleLatestNew
             key={index}
@@ -53,7 +57,6 @@ const LatestNews = (props) => {
             author={item.author}
             date={item.date}
             description={item.description}
-            direction={item.direction} // Pass direction prop
           />
         ))}
       </div>

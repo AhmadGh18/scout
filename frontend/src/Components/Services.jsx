@@ -1,18 +1,65 @@
 import React from "react";
 import { motion } from "framer-motion";
-import SingleService from "./SingleService";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Pagination, Navigation } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+import TitleHeaders from "./TitleHeaders";
+import img1 from "../assets/images/ftyn.png";
+import img2 from "../assets/images/jawala.png";
+import img3 from "../assets/images/mokhaym.png";
+import img4 from "../assets/images/ashbal.png";
+import img5 from "../assets/images/ftyan.png";
 
 const Service = () => {
+  const programs = [
+    {
+      title: "المخيم الصيفي",
+      description:
+        "برنامج صيفي مليء بالأنشطة والتحديات لتحسين المهارات وتكوين الصداقات.",
+      image: img3,
+    },
+    {
+      title: "حلقة الجوالة / دليلات",
+      description: "أنشطة تركز على القيادة والمغامرات في الهواء الطلق.",
+      image: img2,
+    },
+    {
+      title: "حلقة الكشافة / مرشدات",
+      description:
+        "تعليم مهارات الكشافة والمرشدات مع التركيز على العمل الجماعي.",
+      image: img1,
+    },
+    {
+      title: "حلقة الاشبال / الزهرات",
+      description: "أنشطة ممتعة للأطفال مع التركيز على القيم الأساسية والتعلم.",
+      image: img4,
+    },
+    {
+      title: "خدمة المجتمع",
+      description: "مشاريع تهدف إلى تحسين المجتمع وتقديم المساعدة للمحتاجين.",
+      image: img1,
+    },
+    {
+      title: " التنمية المستدامة",
+      image: img5,
+    },
+  ];
+
   return (
-    <div className="p-8 bg-gray-50 font-Aljazeera mt-10">
-      <div className="flex items-center justify-center mt-0">
-        <div className="bg-primary tracking-wider text-3xl p-[300px] text-white px-7 py-2 rounded-b-full rounded-tl-none rounded-tr-none text-center md:mt-[-27px]">
-          خدماتنا{" "}
+    <div className="bg-gray-100 font-Aljazeera mt-10">
+      <div className="flex items-center justify-center mt-4 md:mt-0">
+        <div
+          className="bg-primary text-white text-2xl p-4 md:px-12 md:py-4 shadow-md text-center tracking-wider font-semibold transition-transform duration-300 ease-in-out hover:scale-105"
+          style={{ clipPath: "polygon(0 0, 100% 0, 90% 100%, 10% 100%)" }}
+        >
+          برامجنا
         </div>
-      </div>{" "}
-      <div className="container mx-auto mt-10">
+      </div>
+      <div className="md:mx-auto mt-2 px-4 sm:px-6 p-3 ">
         <motion.div
-          className="flex flex-wrap justify-center gap-4 md:ml-[200px] md:mr-[200px]"
+          className="swiper-container"
           initial="hidden"
           animate="show"
           variants={{
@@ -20,15 +67,46 @@ const Service = () => {
             show: {
               opacity: 1,
               transition: {
-                staggerChildren: 0.3, // Adjust the delay between each item
-                delayChildren: 0.5, // Initial delay before the first item appears
+                staggerChildren: 0.3,
+                delayChildren: 0.2,
               },
             },
           }}
         >
-          {[0, 1, 2, 3, 4, 5].map((index) => (
-            <SingleService key={index} index={index} />
-          ))}
+          <Swiper
+            spaceBetween={10}
+            slidesPerView={1}
+            pagination={{ clickable: true }}
+            navigation
+            modules={[Autoplay, Pagination, Navigation]}
+            autoplay={{ delay: 3000 }}
+            breakpoints={{
+              640: {
+                slidesPerView: 1,
+                spaceBetween: 20,
+              },
+              768: {
+                slidesPerView: 1,
+                spaceBetween: 30,
+              },
+              1024: {
+                slidesPerView: 3,
+                spaceBetween: 40,
+              },
+            }}
+            className="mx-auto w-full p-10"
+          >
+            {programs.map((info, index) => (
+              <SwiperSlide key={index} className="flex justify-center w-[100%]">
+                <TitleHeaders
+                  title={info.title}
+                  description={info.description}
+                  link="#"
+                  image={info.image}
+                />
+              </SwiperSlide>
+            ))}
+          </Swiper>
         </motion.div>
       </div>
     </div>

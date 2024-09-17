@@ -32,6 +32,7 @@ import Governorate from "./Components/Governorate";
 import MajorsCommissions from "./Components/MajorsCommissions";
 import Media from "./Components/Media";
 import Projects from "./Components/Projects";
+import SingleLeader from "./Components/SingleLeader";
 import Videos from "./Components/Videos";
 
 function App() {
@@ -48,19 +49,32 @@ function App() {
           <Route path="/مشاريع" element={<Project />}></Route>
           <Route path="/تجارب" element={<Trials />}></Route>
         </Route>
-        <Route path="/من-نحن" element={<WhoArewe />}>
-          <Route path="الرؤية-والرسالة-والقيم/" element={<Ourview />} />
-          <Route path="الوعد-و-القانون/" element={<PrmoiseAndlaw />} />
-          <Route path="قصة-الكشفية/" element={<ScoutStory />} />
-          <Route path="نبدة-عن-تاريخ-الجمعية" element={<HistoryAboutUs />} />
-        </Route>
+        <Route path="/من-نحن" element={<WhoArewe />} />
+        <Route path="/من-نحن/الرؤية-والرسالة-والقيم/" element={<Ourview />} />
+        <Route path="/من-نحن/الوعد-و-القانون/" element={<PrmoiseAndlaw />} />
+        <Route path="/من-نحن/قصة-الكشفية/" element={<ScoutStory />} />
+        <Route
+          path="/من-نحن/نبدة-عن-تاريخ-الجمعية/"
+          element={<HistoryAboutUs />}
+        />
 
-        <Route path="/هيكلية-الجمعية" element={<Leardrs />}>
-          <Route path="القيادة-العامة/" element={<GenralLeaders />} />
-          <Route path="المفوضية-العامة/" element={<GeneralCommission />} />
-          <Route path="الهيئة-العامة/" element={<GeneraalAuthority />} />
-          <Route path="الهيكلية-الإدارية/" element={<Administrative />} />
-        </Route>
+        <Route path="/هيكلية-الجمعية" element={<Leardrs />}></Route>
+        <Route
+          path="هيكلية-الجمعية/القيادة-العامة/"
+          element={<GenralLeaders />}
+        />
+        <Route
+          path="/هيكلية-الجمعية/المفوضية-العامة/"
+          element={<GeneralCommission />}
+        />
+        <Route
+          path="/هيكلية-الجمعية/الهيكلية-الإدارية/"
+          element={<Administrative />}
+        />
+        <Route
+          path="/هيكلية-الجمعية/الهيئة-العامة/"
+          element={<GeneraalAuthority />}
+        />
 
         <Route path="/برامجنا" element={<Programms />}>
           <Route path="حلقة-الجوالة-دليلات/" element={<Jawwala />} />
@@ -89,6 +103,7 @@ function App() {
           <Route path="مشاريع" element={<Project />} />
           <Route path="الفيديوهات" element={<Videos />} />
         </Route>
+        <Route path="singleleader" element={<SingleLeader />}></Route>
       </Routes>
 
       <Footer />

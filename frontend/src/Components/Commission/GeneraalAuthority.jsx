@@ -1,4 +1,6 @@
 import React from "react";
+import Navbar from "../Navbar";
+import LinkOfPage from "../LinkOfPage";
 
 // Sample list of leaders
 const leaders = [
@@ -81,20 +83,31 @@ const leaders = [
 
 const GeneraalAuthority = () => {
   return (
-    <div className="p-6">
-      <h1 className="text-2xl font-bold mb-6 text-center">
-        جمعية الكشاف المسلم في لبنان
-      </h1>
-      <ol className="grid grid-cols-1 gap-4 p-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 list-arabic-indic">
-        {leaders.map((leader, index) => (
-          <li
-            key={index}
-            className="flex items-center justify-center p-4 border border-gray-300 rounded-lg shadow-sm bg-white hover:bg-gray-100 transition-colors duration-300 text-right rtl:text-left"
-          >
-            {leader}
-          </li>
-        ))}
-      </ol>
+    <div>
+      <Navbar />
+      <LinkOfPage
+        homeTitle="الهيئة العامة"
+        breadcrumbs={[
+          { name: "الرئيسية", url: "/" },
+          { name: "هيكلية الجمعية", url: "/هيكلية-الجمعية" },
+          { name: " الهيئة العامة", url: "" },
+        ]}
+      />
+      <div className="p-6">
+        <h1 className="text-2xl font-bold mb-6 text-center">
+          جمعية الكشاف المسلم في لبنان
+        </h1>
+        <ol className="grid grid-cols-1 gap-4 p-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 list-arabic-indic">
+          {leaders.map((leader, index) => (
+            <li
+              key={index}
+              className="flex items-center justify-center p-4 border border-gray-300 rounded-lg shadow-sm bg-white hover:bg-gray-100 transition-colors duration-300 text-right rtl:text-left"
+            >
+              {leader}
+            </li>
+          ))}
+        </ol>
+      </div>
     </div>
   );
 };

@@ -7,13 +7,15 @@ import img2 from "../assets/images/1_1.jpg";
 import img3 from "../assets/images/2_4.png";
 import img4 from "../assets/images/3_2.jpg";
 import img5 from "../assets/images/4_1.jpg";
+import TopInfo from "./TopInfo";
 
 const Programs = () => {
   const [swiperRef, setSwiperRef] = useState(null);
 
   return (
     <div>
-      <div className="overflow-hidden mt-20 px-4 md:px-0 md:ml-[100px] md:mr-[100px] bg-whiteColor  ">
+      <div className="overflow-hidden mt-20 px-4 md:px-0 md:ml-[100px] md:mr-[100px]   ">
+        <TopInfo title="شركائنا" />
         <div>
           <Swiper
             onSwiper={setSwiperRef}
@@ -28,6 +30,7 @@ const Programs = () => {
             loop={true} // Loop slides infinitely
             modules={[Autoplay, Navigation, Pagination]}
             className="mySwiper"
+            navigation
             breakpoints={{
               // Configure different slides per view for different screen sizes
               640: {
@@ -51,7 +54,7 @@ const Programs = () => {
               (img, index) => {
                 return (
                   <SwiperSlide key={index}>
-                    <div className="h-[150px] w-[150px] bg-red-200 rounded-full flex items-center justify-center">
+                    <div className="h-[150px] w-[150px]  rounded-full flex items-center justify-center mt-10">
                       <img
                         src={img}
                         alt={`Slide ${index}`}

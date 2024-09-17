@@ -64,8 +64,11 @@ const Media = () => {
         <div className="flex font-bold max-w-full gap-2 justify-center overflow-hidden font-Aljazeera flex-wrap mx-4 md:mx-16">
           {[
             { to: "/ميديا", label: "All" },
+
             { to: "/ميديا/صور", label: "صور" },
+
             { to: "/ميديا/وثائق", label: "وثائق" },
+
             { to: "/ميديا/مشاريع", label: "مشاريع" },
           ].map((item, index) => (
             <span

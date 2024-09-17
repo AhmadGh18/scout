@@ -1,110 +1,122 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useInView } from "react-intersection-observer";
+import {
+  FaUserCircle,
+  FaUsers,
+  FaClock,
+  FaStar,
+  FaSearchLocation,
+  FaPeopleArrows,
+} from "react-icons/fa";
+import { SwiperSlide, Swiper } from "swiper/react";
+import { Autoplay, Pagination, Navigation } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+import TopInfo from "./TopInfo";
+
+const stats = [
+  { icon: <FaUserCircle className="text-5xl" />, number: 450, text: "القادة" },
+  { icon: <FaUsers className="text-5xl" />, number: 3850, text: "الأفراد" },
+  {
+    icon: <FaClock className="text-5xl" />,
+    number: 1240859,
+    text: "ساعات الخدمة سنة 2022",
+  },
+  { icon: <FaStar className="text-5xl" />, number: 6, text: "مفوضيات" },
+  {
+    icon: <FaSearchLocation className="text-5xl" />,
+    number: 850,
+    text: "النشاطات خلال سنة 2022",
+  },
+  { icon: <FaPeopleArrows className="text-5xl" />, number: 39, text: "أفواج" },
+];
 
 const Statistic = () => {
-  const { ref, inView } = useInView({
-    triggerOnce: true, // Trigger the animation only once
-    threshold: 0.1, // Start animation when 10% of the element is visible
-  });
-
-  return (
-    <div className="py-10 px-4 sm:px-6 lg:px-8 bg-white mt-16 font-Aljazeera md:relative">
-      <div className="flex items-center md:top-4 md:left-[50%] md:right-[50%] md:absolute justify-center md:mt-[-80px] mb-10">
-        <div className="bg-primary text-2xl tracking-widest p-[12px] text-white px-7 py-2 rounded-b-full rounded-tl-none rounded-tr-none text-center">
-          إحصائيات
-        </div>
-      </div>
-      <div
-        ref={ref}
-        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
-      >
-        {/* Users */}
-        <StatisticCard
-          title="المستخدمين"
-          count={2000}
-          color="text-blue-500"
-          inView={inView}
-        />
-
-        {/* Leaders */}
-        <StatisticCard
-          title="القادة"
-          count={400}
-          color="text-green-500"
-          inView={inView}
-        />
-
-        {/* Activities */}
-        <StatisticCard
-          title="الأنشطة"
-          count={2333}
-          color="text-red-500"
-          inView={inView}
-        />
-
-        {/* Days */}
-        <StatisticCard
-          title="الأيام"
-          count={4000}
-          color="text-purple-500"
-          inView={inView}
-        />
-      </div>
-    </div>
+  const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.5 });
+  const [animatedNumbers, setAnimatedNumbers] = useState(
+    stats.map((stat) => 0)
   );
-};
-
-const StatisticCard = ({ title, count, color, inView }) => {
-  return (
-    <div className="bg-white p-6 rounded-lg shadow-md text-center">
-      <motion.div
-        className={`text-4xl font-bold ${color}`}
-        initial={{ opacity: 0, y: 20 }}
-        animate={inView ? { opacity: 1, y: 0 } : {}}
-        transition={{ duration: 1, ease: "easeOut" }}
-      >
-        <CountUp end={inView ? count : 0} duration={2} />
-      </motion.div>
-      <p className="text-gray-600 mt-2">{title}</p>
-    </div>
-  );
-};
-
-// CountUp Component for number animation
-import { useState, useEffect } from "react";
-import { motion } from "framer-motion";
-
-const CountUp = ({ end, duration }) => {
-  const [count, setCount] = useState(0);
 
   useEffect(() => {
-    if (end === 0) return; // No need to animate if the end value is 0
-
-    const start = 0;
-    const startTime = Date.now();
-
-    const animate = () => {
-      const now = Date.now();
-      const progress = Math.min((now - startTime) / (duration * 1000), 1);
-      const newCount = Math.floor(start + (end - start) * progress);
-      setCount(newCount);
-
-      if (progress < 1) {
-        requestAnimationFrame(animate);
-      }
-    };
-
-    animate();
-  }, [end, duration]);
+    if (inView) {
+      stats.forEach((stat, index) => {
+        let count = 0;
+        const interval = setInterval(() => {
+          count += Math.ceil(stat.number / 100);
+          if (count >= stat.number) {
+            count = stat.number;
+            clearInterval(interval);
+          }
+          setAnimatedNumbers((prevNumbers) => {
+            const newNumbers = [...prevNumbers];
+            newNumbers[index] = count;
+            return newNumbers;
+          });
+        }, 20); // Adjust speed of counting
+      });
+    }
+  }, [inView]);
 
   return (
-    <motion.span
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 1, ease: "easeOut" }}
-    >
-      {count.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
-    </motion.span>
+    <div className="mt-10 bg-gray-200">
+      <TopInfo title="بالأرقام" />
+      <div
+        ref={ref}
+        className="p-12 bg-gray-200 flex items-center "
+        style={{
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundAttachment: "fixed",
+        }}
+      >
+        <Swiper
+          spaceBetween={20} // Adjust space between slides
+          slidesPerView={1}
+          pagination={{ clickable: true }}
+          navigation
+          modules={[Autoplay, Pagination, Navigation]}
+          autoplay={{ delay: 3000 }}
+          breakpoints={{
+            640: {
+              slidesPerView: 2,
+              spaceBetween: 20,
+            },
+            768: {
+              slidesPerView: 3,
+              spaceBetween: 30,
+            },
+            1024: {
+              slidesPerView: 4,
+              spaceBetween: 40,
+            },
+          }}
+          className="w-full flex items-center swiper-button-prev11" // Ensure Swiper container takes full width
+        >
+          {stats.map((stat, index) => (
+            <SwiperSlide
+              key={index}
+              className="flex justify-center mb-3 swiper-button-prev11"
+            >
+              <div
+                className={`flex flex-col items-center p-6 rounded-lg bg-gray-100 shadow-lg ${
+                  inView ? "animate-fadeIn" : ""
+                }`}
+                style={{ width: "100%" }} // Ensure each slide takes full width
+              >
+                <div className="text-primary">{stat.icon}</div>
+                <div className="text-3xl font-bold mb-2 text-primary border-b-4 p-3 border-primary">
+                  {animatedNumbers[index]}
+                </div>
+                <div className="text-lg text-primary font-bold">
+                  {stat.text}
+                </div>
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </div>
+    </div>
   );
 };
 

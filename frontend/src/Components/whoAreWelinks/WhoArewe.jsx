@@ -1,23 +1,96 @@
 import React from "react";
-import { Link, Outlet } from "react-router-dom";
 import Navbar from "../Navbar";
-import rawshi from "../../assets/images/hiker-stand-camping-near-orange-tent-backpack-mountains.jpg";
-
+import SingleProgram from "../SingleProgram";
+import {
+  FaEye,
+  FaHandHoldingHeart,
+  FaBookOpen,
+  FaHistory,
+} from "react-icons/fa";
+import LinkOfPage from "../LinkOfPage";
+import SingleLatestNew from "../InfoInpages";
+import image from "../../assets/images/hiker-stand-camping-near-orange-tent-backpack-mountains.jpg";
 const WhoArewe = () => {
   return (
     <div>
       <Navbar />
 
-      <div
+      <LinkOfPage
+        homeTitle="الرئيسية"
+        breadcrumbs={[
+          { name: "الرئيسية", url: "/" },
+          { name: "من نحن", url: "/من-نحن" },
+        ]}
+      />
+
+      <div className="flex justify-center items-center h-auto mt-10">
+        {/* <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 justify-items-center">
+          <SingleProgram
+            title="الرؤية والرسالة و القيم"
+            icon={<FaEye />}
+            link="/من-نحن/الرؤية-والرسالة-والقيم/"
+          />
+          <SingleProgram
+            title="الوعد والقانون"
+            icon={<FaHandHoldingHeart />}
+            link="/من-نحن/الوعد-و-القانون/"
+          />
+          <SingleProgram
+            title="قصة الكشفية"
+            icon={<FaBookOpen />}
+            link="/من-نحن/قصة-الكشفية/"
+          />
+          <SingleProgram
+            title="نبدة عن تاريخ الجمعية"
+            icon={<FaHistory />}
+            link="/من-نحن/نبدة-عن-تاريخ-الجمعية/"
+          />
+        </div> */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 justify-items-center">
+          <SingleLatestNew
+            image={image}
+            title=" الرؤية والرسالةوالقيم"
+            description="نحن نحن نحننحننحن نحننحن"
+            link=""
+          />
+          <SingleLatestNew
+            image={image}
+            title=" الوعد و القانون"
+            date="12-1-2020"
+            description="نحن نحن نحننحننحن نحننحن"
+            link=""
+          />
+          <SingleLatestNew
+            image={image}
+            title=" قصة الكشقية"
+            date="12-1-2020"
+            description="نحن نحن نحننحننحن نحننحن"
+            link="/"
+          />
+          <SingleLatestNew
+            image={image}
+            title=" نبدة عن تاريخ الجمعية"
+            date="12-1-2020"
+            description="نحن نحن نحننحننحن نحننحن"
+            link="/"
+          />
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default WhoArewe;
+
+{
+  /* <div
         className="relative bg-cover bg-center h-[60vh] flex justify-center items-center md:gap-5 font-Aljazeera max-w-full"
         style={{
           backgroundImage: `url(${rawshi})`,
         }}
       >
-        {/* Overlay */}
         <div className="absolute inset-0 bg-black opacity-70"></div>
 
-        {/* Content */}
         <div className="relative z-10 flex md:gap-5 flex-wrap gap-2 justify-center">
           <Link
             to="الرؤية-والرسالة-والقيم/"
@@ -44,13 +117,5 @@ const WhoArewe = () => {
             نبدة عن تاريخ الجمعية
           </Link>
         </div>
-      </div>
-
-      <div className="p-4">
-        <Outlet />
-      </div>
-    </div>
-  );
-};
-
-export default WhoArewe;
+      </div> */
+}

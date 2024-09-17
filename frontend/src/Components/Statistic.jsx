@@ -91,7 +91,7 @@ const Statistic = () => {
               spaceBetween: 40,
             },
           }}
-          className="w-full flex items-center swiper-button-prev11" // Ensure Swiper container takes full width
+          className="w-full flex items-center swiper-button-prev11 p-4" // Ensure Swiper container takes full width
         >
           {stats.map((stat, index) => (
             <SwiperSlide
@@ -99,7 +99,7 @@ const Statistic = () => {
               className="flex justify-center mb-3 swiper-button-prev11"
             >
               <div
-                className={`flex flex-col items-center p-6 rounded-lg bg-gray-100 shadow-lg ${
+                className={`flex flex-col items-center h-[40vh] justify-center p-6 rounded-lg bg-gray-100 shadow-lg ${
                   inView ? "animate-fadeIn" : ""
                 }`}
                 style={{ width: "100%" }} // Ensure each slide takes full width

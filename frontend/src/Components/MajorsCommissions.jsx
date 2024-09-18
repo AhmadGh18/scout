@@ -12,6 +12,8 @@ import {
   FaQuran,
   FaUserTie,
 } from "react-icons/fa";
+import Infoinpages from "./InfoInpages";
+import img from "../assets/images/group-male-friends-having-fun-spending-time-together.jpg";
 
 const MajorsCommissions = () => {
   return (
@@ -21,19 +23,37 @@ const MajorsCommissions = () => {
         المفوضيات
       </p>
       <div className="flex justify-center gap-5 flex-wrap">
-        <SingleProgram
-          title="مفوضية الشؤون المالية"
-          icon={<FaMoneyBillWave />}
-        />
-        <SingleProgram title="مفوضية الشؤون الإدارية" icon={<FaUserTie />} />{" "}
-        <SingleProgram title="مفوضية المراسم" icon={<FaClipboardList />} />{" "}
-        <SingleProgram title="مفوضية الإعلام" icon={<FaNewspaper />} />{" "}
-        <SingleProgram
+        <Infoinpages title="مفوضية الشؤون المالية" image={img} />
+        <Infoinpages
+          title="مفوضية الشؤون الإدارية"
+          icon={<FaUserTie />}
+          image={img}
+        />{" "}
+        <Infoinpages
+          title="مفوضية المراسم"
+          icon={<FaClipboardList />}
+          image={img}
+        />{" "}
+        <Infoinpages
+          title="مفوضية الإعلام"
+          icon={<FaNewspaper />}
+          image={img}
+        />{" "}
+        <Infoinpages
           title="مفوضية تنمية القيادات "
           icon={<FaPlaneDeparture />}
+          image={img}
         />
-        <SingleProgram title="مفوضية  لمناهج والبرامج " icon={<FaBookOpen />} />
-        <SingleProgram title="مفوضية  لشؤون الدينية " icon={<FaQuran />} />
+        <Infoinpages
+          title="مفوضية  لمناهج والبرامج "
+          icon={<FaBookOpen />}
+          image={img}
+        />
+        <Infoinpages
+          title="مفوضية  لشؤون الدينية "
+          icon={<FaQuran />}
+          image={img}
+        />
       </div>
     </div>
   );

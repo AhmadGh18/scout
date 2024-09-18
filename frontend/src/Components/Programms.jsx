@@ -12,13 +12,21 @@ import {
 import { motion, useInView } from "framer-motion";
 import SingleService from "./SingleService";
 import SingleProgram from "./SingleProgram";
+import LinkOfPage from "./LinkOfPage";
 const Programms = ({ index }) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
 
   return (
-    <div className="font-Aljazeera">
+    <div className="font-Aljazeera bg-gray-200">
       <Navbar />
+      <LinkOfPage
+        homeTitle="القيادة العامة"
+        breadcrumbs={[
+          { name: "الرئيسية", url: "/" },
+          { name: " برامجنا", url: "/برامجنا" },
+        ]}
+      />
       <h1 className="text-center flex justify-center items-center text-4xl p-6 mb-10  tracking-wider">
         برامجنا
       </h1>
@@ -35,7 +43,7 @@ const Programms = ({ index }) => {
             },
           },
         }}
-        className="flex justify-center items-center flex-wrap max-w-4xl mx-auto p-3"
+        className="flex justify-center items-center flex-wrap   p-3 gap-4 w-[100%]"
       >
         <SingleProgram icon={<FaFire />} title="حلقة الجوالة / دليلات" />
         <SingleProgram icon={<FaTree />} title="حلقة الأشبال / الزهرات" />

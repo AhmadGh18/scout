@@ -10,6 +10,7 @@ import {
 import LinkOfPage from "../LinkOfPage";
 import SingleLatestNew from "../InfoInpages";
 import image from "../../assets/images/hiker-stand-camping-near-orange-tent-backpack-mountains.jpg";
+import Infoinpages from "../InfoInpages";
 const WhoArewe = () => {
   return (
     <div>
@@ -47,27 +48,27 @@ const WhoArewe = () => {
           />
         </div> */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 justify-items-center">
-          <SingleLatestNew
+          <Infoinpages
             image={image}
             title=" الرؤية والرسالةوالقيم"
             description="نحن نحن نحننحننحن نحننحن"
-            link=""
+            link="/الرؤية-والرسالة-والقيم"
           />
-          <SingleLatestNew
+          <Infoinpages
             image={image}
             title=" الوعد و القانون"
             date="12-1-2020"
             description="نحن نحن نحننحننحن نحننحن"
-            link=""
+            link="/الوعد-و-القانون"
           />
-          <SingleLatestNew
+          <Infoinpages
             image={image}
             title=" قصة الكشقية"
             date="12-1-2020"
             description="نحن نحن نحننحننحن نحننحن"
-            link="/"
+            link="/قصة-الكشفية"
           />
-          <SingleLatestNew
+          <Infoinpages
             image={image}
             title=" نبدة عن تاريخ الجمعية"
             date="12-1-2020"

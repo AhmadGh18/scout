@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import img1 from "../assets/images/portfolio-3.jpg"; // First image
 import img2 from "../assets/images/Screenshot_20231119-140801_Pinterest.jpg"; // Second image
 import Navbar from "./Navbar";
+import LinkOfPage from "./LinkOfPage";
 
 const Media = () => {
   const [isFullScreen, setIsFullScreen] = useState(false);
@@ -48,6 +49,13 @@ const Media = () => {
   return (
     <>
       <Navbar />
+      <LinkOfPage
+        homeTitle=" ميديا"
+        breadcrumbs={[
+          { name: "الرئيسية", url: "/" },
+          { name: " ميديا", url: "" },
+        ]}
+      />
       <div className="bg-gray-100 mt-16 overflow-hidden">
         <div className="text-center font-Aljazeera mx-4 md:mx-16">
           <div className="flex items-center max-w-full justify-center mt-0">

@@ -20,7 +20,6 @@ import NewMedia from "../NewMedia";
 const Home = () => {
   return (
     <div>
-      <TopNavBar />
       <Navbar />
       <Banner />
       <InfoAboutUs />

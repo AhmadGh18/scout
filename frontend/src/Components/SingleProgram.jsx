@@ -1,6 +1,7 @@
 import React, { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { Link } from "react-router-dom";
+import LinkOfPage from "./LinkOfPage";
 const SingleProgram = (props, { index }) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
@@ -21,6 +22,9 @@ const SingleProgram = (props, { index }) => {
         >
           <div className="bg-white w-full flex justify-center items-center py-6 ">
             <img src={props.image} className="text-5xl text-primary h-40" />
+            {props.icon && (
+              <span className="text-5xl text-primary">{props.icon}</span>
+            )}
           </div>
           <div className="p-6">
             <p className="text-xl font-semibold text-center mb-4">

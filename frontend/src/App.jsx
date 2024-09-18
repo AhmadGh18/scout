@@ -40,6 +40,7 @@ function App() {
 
   return (
     <>
+      <TopNavBar />
       <Routes>
         <Route path="/" element={<Home />}>
           <Route path="/صور" element={<Allpictures />}></Route>
@@ -50,42 +51,23 @@ function App() {
           <Route path="/تجارب" element={<Trials />}></Route>
         </Route>
         <Route path="/من-نحن" element={<WhoArewe />} />
-        <Route path="/من-نحن/الرؤية-والرسالة-والقيم/" element={<Ourview />} />
-        <Route path="/من-نحن/الوعد-و-القانون/" element={<PrmoiseAndlaw />} />
-        <Route path="/من-نحن/قصة-الكشفية/" element={<ScoutStory />} />
-        <Route
-          path="/من-نحن/نبدة-عن-تاريخ-الجمعية/"
-          element={<HistoryAboutUs />}
-        />
+        <Route path="/الرؤية-والرسالة-والقيم/" element={<Ourview />} />
+        <Route path="الوعد-و-القانون/" element={<PrmoiseAndlaw />} />
+        <Route path="قصة-الكشفية/" element={<ScoutStory />} />
+        <Route path="نبدة-عن-تاريخ-الجمعية/" element={<HistoryAboutUs />} />
 
         <Route path="/هيكلية-الجمعية" element={<Leardrs />}></Route>
-        <Route
-          path="هيكلية-الجمعية/القيادة-العامة/"
-          element={<GenralLeaders />}
-        />
-        <Route
-          path="/هيكلية-الجمعية/المفوضية-العامة/"
-          element={<GeneralCommission />}
-        />
-        <Route
-          path="/هيكلية-الجمعية/الهيكلية-الإدارية/"
-          element={<Administrative />}
-        />
-        <Route
-          path="/هيكلية-الجمعية/الهيئة-العامة/"
-          element={<GeneraalAuthority />}
-        />
+        <Route path="/القيادة-العامة" element={<GenralLeaders />} />
+        <Route path="المفوضية-العامة/" element={<GeneralCommission />} />
+        <Route path="/الهيكلية-الإدارية/" element={<Administrative />} />
+        <Route path="الهيئة-العامة/" element={<GeneraalAuthority />} />
 
         <Route path="/برامجنا" element={<Programms />}>
           <Route path="حلقة-الجوالة-دليلات/" element={<Jawwala />} />
           <Route path="حلقة-الكشافة-مرشدات/" element={<Kashafa />} />
           <Route path="حلقة-الأشبال-الزهرات/" element={<Ashbal />} />
         </Route>
-        <Route path="/اخبارنا">
-          <Route path="القيادة-العامة/" element={<Ournew />} />
-          <Route path="المفوضية -العامة/" />
-          <Route path="مفوضيات -المناطق/" />
-        </Route>
+        <Route path="/اخبارنا" element={<Ournew />}></Route>
         <Route path="/مفوضيات-المناطق" element={<Governorate />}>
           <Route path="مفوضية-بيروت/" />
           <Route path="مفوضية-الشمال/" />

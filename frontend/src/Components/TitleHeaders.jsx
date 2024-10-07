@@ -10,7 +10,7 @@ const TitleHeaders = ({ title, description, link, image }) => {
     <Link to={link}>
       <motion.div
         ref={ref}
-        className="relative flex flex-col border-2 border-primary rounded-lg shadow-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300 mt-6 sm:mt-3 group w-full sm:w-[90vw] md:w-[40vw] lg:w-[30vw] xl:w-[28vw] h-[40vh] md:h-[40vh]"
+        className="relative flex flex-col  border-primary rounded-lg shadow-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300 mt-6 sm:mt-3 group w-full sm:w-[90vw] md:w-[40vw] lg:w-[30vw] xl:w-[28vw] h-[40vh] md:h-[40vh]"
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: inView ? 1 : 0, y: inView ? 0 : 50 }}
         transition={{ duration: 0.3, ease: "easeIn" }}

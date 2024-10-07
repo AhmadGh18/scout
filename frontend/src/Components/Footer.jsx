@@ -280,7 +280,12 @@ const Footer = () => {
                     href="#"
                     className="text-gray-500 transition hover:opacity-75 dark:text-gray-400"
                   >
-                    Powered by candle media solutions
+                    <a
+                      href="                      https://www.linkedin.com/company/candlemediasolutions
+"
+                    >
+                      Powered by candle media solutions
+                    </a>
                   </a>
                 </li>
               </ul>

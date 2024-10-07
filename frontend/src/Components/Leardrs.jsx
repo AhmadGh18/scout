@@ -1,6 +1,5 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
-import TopInfoLinks from "./TopInfoLinks";
 import rawshi from "../assets/images/group-male-friends-having-fun-spending-time-together.jpg";
 import Navbar from "./Navbar";
 import SingleProgram from "./SingleProgram";
@@ -23,7 +22,6 @@ const Leardrs = () => {
   ];
   return (
     <div>
-      <Navbar />
       <LinkOfPage
         homeTitle="هيكلية الجمعية"
         breadcrumbs={[

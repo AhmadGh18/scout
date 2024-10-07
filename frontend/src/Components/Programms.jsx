@@ -1,35 +1,25 @@
 import React, { useRef } from "react";
-import { Outlet } from "react-router-dom";
 import Navbar from "./Navbar";
-import {
-  FaCampground,
-  FaFire,
-  FaHandsHelping,
-  FaHeart,
-  FaTree,
-  FaWodu,
-} from "react-icons/fa";
+import img from "../assets/images/hiker-stand-camping-near-orange-tent-backpack-mountains.jpg";
 import { motion, useInView } from "framer-motion";
 import SingleService from "./SingleService";
-import SingleProgram from "./SingleProgram";
 import LinkOfPage from "./LinkOfPage";
+import Infoinpages from "./InfoInpages";
+import { FaHome } from "react-icons/fa";
 const Programms = ({ index }) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
 
   return (
     <div className="font-Aljazeera bg-gray-200">
-      <Navbar />
       <LinkOfPage
-        homeTitle="القيادة العامة"
+        homeTitle=" برامجنا"
         breadcrumbs={[
-          { name: "الرئيسية", url: "/" },
+          { name: <FaHome />, url: "/" },
           { name: " برامجنا", url: "/برامجنا" },
         ]}
       />
-      <h1 className="text-center flex justify-center items-center text-4xl p-6 mb-10  tracking-wider">
-        برامجنا
-      </h1>
+
       <motion.div
         initial="hidden"
         animate="show"
@@ -45,11 +35,11 @@ const Programms = ({ index }) => {
         }}
         className="flex justify-center items-center flex-wrap   p-3 gap-4 w-[100%]"
       >
-        <SingleProgram icon={<FaFire />} title="حلقة الجوالة / دليلات" />
-        <SingleProgram icon={<FaTree />} title="حلقة الأشبال / الزهرات" />
-        <SingleProgram icon={<FaCampground />} title=" حلقة الكشافة / مرشدات" />
-        <SingleProgram icon={<FaHandsHelping />} title="التنمية المستدامة" />
-        <SingleProgram icon={<FaHeart />} title="خدمة المجتمع" />
+        <Infoinpages title="حلقة الجوالة / دليلات" image={img} />
+        <Infoinpages title="حلقة الأشبال / الزهرات" image={img} />
+        <Infoinpages title=" حلقة الكشافة / مرشدات" image={img} />
+        <Infoinpages title="التنمية المستدامة" image={img} />
+        <Infoinpages title="خدمة المجتمع" image={img} />
       </motion.div>
     </div>
   );

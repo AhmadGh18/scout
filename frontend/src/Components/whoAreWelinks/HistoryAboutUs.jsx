@@ -1,11 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Navbar from "../Navbar";
 import LinkOfPage from "../LinkOfPage";
 
 const HistoryAboutUs = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0); // Scroll to the top of the page
+  }, []);
   return (
     <div>
-      <Navbar />
       <LinkOfPage
         homeTitle="نبذة عن تاريخ الجمعية "
         breadcrumbs={[
@@ -14,16 +16,16 @@ const HistoryAboutUs = () => {
           { name: " نبذة عن تاريخ الجمعية ", url: "" },
         ]}
       />
-      <div className="relative text-right mt-10 font-Aljazeera w-full flex flex-col items-end leading-3 tracking-wider max-w-[90%] ">
+      <div className="relative text-right mt-10 font-Aljazeera w-full flex flex-col items-end leading-3 tracking-wide max-w-[90%] ">
         <div className="flex flex-col items-end relative w-full md:pr-10">
           {/* Header */}
           <div className="flex items-center justify-start w-full">
-            <p className="text-5xl tracking-wider mb-6 md:mr-10">
+            <p className="text-5xl tracking-wide mb-6 md:mr-10">
               نبذة عن تاريخ الجمعية
             </p>
           </div>
 
-          <div className="flex flex-col leading-9 max-w-[]">
+          <div className="flex flex-col leading-9">
             <p className="p-4 border-r-4 border-primary bg-white rounded-sm shadow-sm mt-10">
               <p className="font-bold text-black">المقدمة</p>
               بقَدَر ما كانت بيروت حاملةً لرايةِ الحداثة في بداية القرن الحافلِ

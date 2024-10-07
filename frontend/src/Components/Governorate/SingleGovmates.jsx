@@ -1,7 +1,7 @@
 import React from "react";
 import logo from "../../assets/images/beirutgov.png";
 import beirut from "../../assets/images/beirutdownload.png";
-const SingleGovmates = () => {
+const SingleGovmates = ({ city }) => {
   return (
     <div className="flex flex-col justify-start items-end p-8 bg-gray-50 rounded-lg shadow-lg font-Aljazeera">
       {/* Header section with logo and title */}
@@ -11,7 +11,7 @@ const SingleGovmates = () => {
           className="h-40 w-40 object-contain"
           alt="Beirut Gov Logo"
         />
-        <p className="md:text-3xl font-bold text-gray-900">مفوضية بيروت</p>
+        <p className="md:text-3xl font-bold text-gray-900"> {city}</p>
       </div>
 
       {/* History and description */}

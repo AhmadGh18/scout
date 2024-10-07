@@ -11,7 +11,7 @@
         {
             "type": "Feature",
             "properties": {
-                "shape1": "Baalbek-Hermel",
+                "shape1": "بعلبك-الهرمل",
                 "shapeiso": "LB-BH",
                 "shapeid": "68408151B19672163648714",
                 "shapegroup": "LBN",
@@ -4215,7 +4215,7 @@
         {
             "type": "Feature",
             "properties": {
-                "shape1": "Beyrouth",
+                "shape1": "بيروت",
                 "shapeiso": "LB-BA",
                 "shapeid": "68408151B13555465262434",
                 "shapegroup": "LBN",
@@ -4547,7 +4547,7 @@
         {
             "type": "Feature",
             "properties": {
-                "shape1": "Liban-Nord",
+                "shape1": "الشمال",
                 "shapeiso": "LB-AS",
                 "shapeid": "68408151B65529488220063",
                 "shapegroup": "LBN",
@@ -7327,7 +7327,7 @@
         {
             "type": "Feature",
             "properties": {
-                "shape1": "Mont-Liban",
+                "shape1": "جبل لبنان",
                 "shapeiso": "LB-JL",
                 "shapeid": "68408151B78911970066467",
                 "shapegroup": "LBN",
@@ -9891,7 +9891,7 @@
         {
             "type": "Feature",
             "properties": {
-                "shape1": "Liban-Sud",
+                "shape1": "الجنوب",
                 "shapeiso": "LB-JA",
                 "shapeid": "68408151B17317068268844",
                 "shapegroup": "LBN",
@@ -13695,7 +13695,7 @@
         {
             "type": "Feature",
             "properties": {
-                "shape1": "Nabatîyé",
+                "shape1": "النبطية",
                 "shapeiso": "LB-NA",
                 "shapeid": "68408151B46493486830483",
                 "shapegroup": "LBN",
@@ -17275,7 +17275,7 @@
         {
             "type": "Feature",
             "properties": {
-                "shape1": "Béqaa",
+                "shape1": "البقاع",
                 "shapeiso": "LB-BI",
                 "shapeid": "68408151B59549752014872",
                 "shapegroup": "LBN",
@@ -20559,7 +20559,7 @@
         {
             "type": "Feature",
             "properties": {
-                "shape1": "Aakkâr",
+                "shape1": "عكار",
                 "shapeiso": "LB-AK",
                 "shapeid": "68408151B85296590469481",
                 "shapegroup": "LBN",
@@ -22735,7 +22735,7 @@
         {
             "type": "Feature",
             "properties": {
-                "shape1": "Keserwan-Jbeil",
+                "shape1": "كسروان - جبيل",
                 "shapeiso": "N/A",
                 "shapeid": "68408151B4671352582534",
                 "shapegroup": "LBN",

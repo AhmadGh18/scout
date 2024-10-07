@@ -6,54 +6,42 @@ import {
   FaBookDead,
   FaBookOpen,
   FaClipboardList,
+  FaHome,
   FaMoneyBillWave,
   FaNewspaper,
   FaPlaneDeparture,
   FaQuran,
   FaUserTie,
+  FaWpressr,
 } from "react-icons/fa";
 import Infoinpages from "./InfoInpages";
 import img from "../assets/images/group-male-friends-having-fun-spending-time-together.jpg";
+import LinkOfPage from "./LinkOfPage";
 
 const MajorsCommissions = () => {
   return (
-    <div>
-      <Navbar />
-      <p className="flex justify-center items-center p-5 md:text-4xl mb-3 font-Aljazeera">
-        المفوضيات
-      </p>
-      <div className="flex justify-center gap-5 flex-wrap">
-        <Infoinpages title="مفوضية الشؤون المالية" image={img} />
-        <Infoinpages
+    <div className="">
+      <LinkOfPage
+        homeTitle="مفوضيات الاحتصاص"
+        breadcrumbs={[
+          { name: <FaHome />, url: "/" },
+          { name: " مفوضيات الاحتصاص", url: "/مفوضيات الاحتصاص" },
+        ]}
+      />{" "}
+      <div className="flex justify-center gap-5 flex-wrap pt-4 h-auto pb-3 md:h-full">
+        <SingleProgram title="مفوضية الشؤون المالية" icon={<FaWpressr />} />
+        <SingleProgram
           title="مفوضية الشؤون الإدارية"
           icon={<FaUserTie />}
-          image={img}
         />{" "}
-        <Infoinpages
-          title="مفوضية المراسم"
-          icon={<FaClipboardList />}
-          image={img}
-        />{" "}
-        <Infoinpages
-          title="مفوضية الإعلام"
-          icon={<FaNewspaper />}
-          image={img}
-        />{" "}
-        <Infoinpages
+        <SingleProgram title="مفوضية المراسم" icon={<FaClipboardList />} />{" "}
+        <SingleProgram title="مفوضية الإعلام" icon={<FaNewspaper />} />{" "}
+        <SingleProgram
           title="مفوضية تنمية القيادات "
           icon={<FaPlaneDeparture />}
-          image={img}
         />
-        <Infoinpages
-          title="مفوضية  لمناهج والبرامج "
-          icon={<FaBookOpen />}
-          image={img}
-        />
-        <Infoinpages
-          title="مفوضية  لشؤون الدينية "
-          icon={<FaQuran />}
-          image={img}
-        />
+        <SingleProgram title="مفوضية  لمناهج والبرامج " icon={<FaBookOpen />} />
+        <SingleProgram title="مفوضية  لشؤون الدينية " icon={<FaQuran />} />
       </div>
     </div>
   );

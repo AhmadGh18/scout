@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 
 import TopNavBar from "./TopNavBar";
 import Navbar from "./Navbar";
@@ -18,12 +18,14 @@ import TestLatestNew from "./TestLatestNew";
 import NewMedia from "../NewMedia";
 
 const Home = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0); // Scroll to the top of the page
+  }, []);
   return (
     <div>
-      <Navbar />
       <Banner />
       <InfoAboutUs />
-      <TestLatestNew />
+      <TestLatestNew show={true} />
 
       {/* <LatestNews display={true} /> */}
 
@@ -31,7 +33,7 @@ const Home = () => {
       {/* <Projects /> */}
       <NewMedia />
       <Statistic />
-      <MapChart />
+      <MapChart view={true} />
       {/* <TestMap /> */}
       <Programs />
       {/* <Footer /> */}

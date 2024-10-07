@@ -5,8 +5,9 @@ import img2 from "../assets/images/group-male-friends-having-fun-spending-time-t
 import img3 from "../assets/images/hiker-stand-camping-near-orange-tent-backpack-mountains.jpg";
 import TestSingleLatestnew from "./TestSingleLatestnew";
 import TopInfo from "./TopInfo";
+import { Link } from "react-router-dom";
 
-const TestLatestNew = () => {
+const TestLatestNew = ({ show }) => {
   const newsItems = [
     {
       image: img3,
@@ -68,6 +69,14 @@ const TestLatestNew = () => {
           />
         ))}
       </motion.div>
+      {show == true && (
+        <Link
+          to="/اخبارنا"
+          className="flex justify-center text-lg cursor-pointer bg-primary py-2 px-4 text-white rounded w-fit m-auto mt-3"
+        >
+          عرض المزيد...
+        </Link>
+      )}
     </div>
   );
 };

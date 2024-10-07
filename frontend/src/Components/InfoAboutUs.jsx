@@ -40,7 +40,7 @@ const InfoAboutUs = () => {
           transition={{ duration: 0.6, ease: "easeOut" }}
         >
           <h2 className="text-3xl font-semibold mb-4 text-right">من نحن</h2>
-          <p className="text-gray-500 tracking-wider leading-8 text-lg text-right">
+          <p className="text-gray-500 tracking-wide leading-8 text-lg text-right">
             تتمثل مهمة جمعية الكشاف المسلم في لبنان بالمساهمة في تربية الشباب من
             خلال نظام تربوي لاكتساب القيم يرتكز على الوعد و القانون لتمكين
             الشباب من حل المشاكل بإبداع ونزاهة لريادة حياة متوازنة لخدمة الوطن

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Navbar from "../Navbar";
 import SingleProgram from "../SingleProgram";
 import {
@@ -12,12 +12,13 @@ import SingleLatestNew from "../InfoInpages";
 import image from "../../assets/images/hiker-stand-camping-near-orange-tent-backpack-mountains.jpg";
 import Infoinpages from "../InfoInpages";
 const WhoArewe = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0); // Scroll to the top of the page
+  }, []);
   return (
     <div>
-      <Navbar />
-
       <LinkOfPage
-        homeTitle="الرئيسية"
+        homeTitle=" من نحن"
         breadcrumbs={[
           { name: "الرئيسية", url: "/" },
           { name: "من نحن", url: "/من-نحن" },

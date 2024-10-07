@@ -23,7 +23,6 @@ const Administrative = () => {
 
   return (
     <div>
-      <Navbar />
       <LinkOfPage
         homeTitle="الهيكلية الإدارية"
         breadcrumbs={[

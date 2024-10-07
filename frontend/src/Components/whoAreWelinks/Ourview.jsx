@@ -1,11 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Navbar from "../Navbar";
 import LinkOfPage from "../LinkOfPage";
 
 const Ourview = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0); // Scroll to the top of the page
+  }, []);
   return (
     <div>
-      <Navbar />
       <LinkOfPage
         homeTitle="الرؤية والرسالة والقيم"
         breadcrumbs={[

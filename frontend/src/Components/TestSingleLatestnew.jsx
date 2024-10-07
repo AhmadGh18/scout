@@ -20,7 +20,13 @@ const TestSingleLatestnew = ({ image, title, description, date }) => {
       className="max-w-sm bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow"
     >
       <div className="relative">
-        <img src={image} className="w-full h-48 object-cover" alt={title} />
+        <motion.img
+          src={image}
+          className="w-full h-48 object-cover"
+          alt={title}
+          whileHover={{ scale: 1.05 }}
+          transition={{ duration: 0.3 }} // Smooth transition for the zoom effect
+        />
         <div className="absolute bottom-0 left-0 bg-primary text-white p-2 text-sm">
           <p>{date}</p>
         </div>

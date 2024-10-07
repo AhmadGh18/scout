@@ -34,13 +34,14 @@ import Media from "./Components/Media";
 import Projects from "./Components/Projects";
 import SingleLeader from "./Components/SingleLeader";
 import Videos from "./Components/Videos";
+import Search from "./Search";
 
 function App() {
   const [count, setCount] = useState(0);
 
   return (
     <>
-      <TopNavBar />
+      <Navbar />
       <Routes>
         <Route path="/" element={<Home />}>
           <Route path="/صور" element={<Allpictures />}></Route>
@@ -79,13 +80,9 @@ function App() {
         <Route path="/مفوضيات-الاحتصاص" element={<MajorsCommissions />}>
           <Route path="مفوضية-الشؤون-المالية"></Route>
         </Route>
-        <Route path="/ميديا" element={<Media />}>
-          <Route path="صور" element={<Allpictures />} />
-          <Route path="وثائق" element={<Documents />} />
-          <Route path="مشاريع" element={<Project />} />
-          <Route path="الفيديوهات" element={<Videos />} />
-        </Route>
+        <Route path="/ميديا" element={<Media />} />
         <Route path="singleleader" element={<SingleLeader />}></Route>
+        <Route path="/بحث" element={<Search />} />
       </Routes>
 
       <Footer />

@@ -1,121 +1,59 @@
-import React, { useState } from "react";
-import { motion, useAnimation } from "framer-motion";
-import { useInView } from "react-intersection-observer";
-import YouTube from "react-youtube";
+import React, { useEffect } from "react";
+import Navbar from "../Navbar";
+import LinkOfPage from "../LinkOfPage";
+import { FaHome } from "react-icons/fa";
 
-const InfoAboutUs = () => {
-  const videoControls = useAnimation();
-  const textControls = useAnimation();
-  const [isPlaying, setIsPlaying] = useState(false); // State to track video play status
-  const [player, setPlayer] = useState(null); // State to store the YouTube player instance
-
-  const { ref: videoRef, inView: inViewVideo } = useInView({
-    triggerOnce: true,
-    threshold: 0.1,
-  });
-  const { ref: textRef, inView: inViewText } = useInView({
-    triggerOnce: true,
-    threshold: 0.1,
-  });
-
-  React.useEffect(() => {
-    if (inViewVideo) {
-      videoControls.start({ x: 0, opacity: 1 });
-    }
-  }, [inViewVideo, videoControls]);
-
-  React.useEffect(() => {
-    if (inViewText) {
-      textControls.start({ x: 0, opacity: 1 });
-    }
-  }, [inViewText, textControls]);
-
-  // Function to handle video play
-  const handlePlay = () => {
-    setIsPlaying(true);
-    if (player) {
-      player.playVideo(); // Use the player instance to play the video
-    }
-  };
-
-  // Function to handle when the video player is ready
-  const onPlayerReady = (event) => {
-    setPlayer(event.target); // Set the player instance to state
-  };
-
+const PrmoiseAndlaw = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0); // Scroll to the top of the page
+  }, []);
   return (
-    <div className="">
-      {" "}
-      {/* Ensures no horizontal overflow */}
-      <div className="flex justify-center items-center p-8 bg-whiteColor font-Aljazeera mt-20 flex-wrap">
-        <div className="flex flex-col md:flex-row max-w-screen-lg md:mx-auto h-auto gap-5 flex-wrap">
-          <motion.div
-            ref={textRef}
-            className="flex-1 p-8 flex flex-col justify-center text-center md:text-right"
-            initial={{ x: 20, opacity: 0 }}
-            animate={textControls}
-            transition={{ duration: 0.3, ease: "easeOut" }}
-          >
-            <h2 className="text-3xl font-semibold mb-4 text-left">من نحن</h2>
-            <p className="text-gray-500 tracking-wider leading-8 text-lg text-left">
-              تتمثل مهمة جمعية الكشاف المسلم في لبنان بالمساهمة في تربية الشباب
-              من خلال نظام تربوي لاكتساب القيم يرتكز على الوعد و القانون لتمكين
-              الشباب من حل المشاكل بإبداع ونزاهة لريادة حياة متوازنة لخدمة الوطن
-              والمساعدة في بناء عالم أفضل يلتزم فيه المواطنون كأفراد بأداء دور
-              بنّاء في المجتمع.
-            </p>
-            <button className="relative bg-primary overflow-hidden mt-3 w-32 h-12 text-white border-none rounded-md text-xl font-bold cursor-pointer group self-center md:self-auto">
-              <span className="absolute w-36 h-32 -top-8 -left-2 bg-white rotate-12 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></span>
-              <span className="absolute w-36 h-32 -top-8 -left-2 bg-purple-400 rotate-12 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-700 origin-left"></span>
-              <span className="absolute w-36 h-32 -top-8 -left-2 bg-primary rotate-12 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-1000 origin-left"></span>
-              <span className="relative z-10 group-hover:text-white transition-colors duration-300 tracking-widest">
-                برامجنا
-              </span>
-            </button>
-          </motion.div>
+    <div>
+      <LinkOfPage
+        homeTitle=" الوعد و القانون"
+        breadcrumbs={[
+          { name: <FaHome />, url: "/" },
+          { name: "من نحن", url: "/من-نحن" },
+          { name: "  الوعد و القانون ", url: "" },
+        ]}
+      />
+      <div className="relative text-right mt-10 font-Aljazeera flex flex-col items-start mr-5">
+        {/* Container with a line on the right side */}
+        <div className="text-lg tracking-wide text-gray-800 md:mr-8 mr-3 md:max-w-[80%] md:space-y-8">
+          <div className="flex items-center justify-start w-full">
+            <p className="text-5xl tracking-wide">الوعد و القانون</p>
+          </div>
+        </div>
+        <p className="text-lg leading-10 tracking-wider mt-10 text-gray-800 border-r-4 px-3 border-primary max-w-[90%] md:max-w-[90%]">
+          عند تأسيس الحركة الكشفية عام 1907, وضع بادن باول خُلاصةَ تجاربِه
+          ليصوغَ قانوناً للكشافيكون خارطةَ طريقٍ للإهتداء بها في خدمة الفرد
+          والوطن.وصاغ عبد الجبار خيري عام 1912 تلك المبادئ بما يتلاءم مع
+          مجتمعِنا وبيئتِنا.والقانون عبارةٌ عن عشرة مبادئ أخلاقية, إنْ تبِعَها
+          الكشاف يكون قد تَبِعَ دينَه ودنياهوأرضى اللهَ والرسول وأُولي الأمر.
+          وهذه المبادئ هي:
+        </p>
+        <div className="text-lg leading-10 flex md:flex-row  gap-7  flex-col  p-3 tracking-wider mt-10 text-gray-800 border-r-4 px-3 border-primary max-w-[90%] md:max-w-[90%]">
+          <ul className="list-disc space-y-5 pr-3">
+            <li>شرفُ الكشاف يوثَقُ به ويُعتَمَدُ عليه.</li>
+            <li>الكشاف طاهرُ الفكر والقول والعمل.</li>
 
-          <motion.div
-            ref={videoRef}
-            className="flex-1 relative w-full h-48 md:h-auto rounded-lg bg-gray-200 overflow-hidden"
-            initial={{ x: -20, opacity: 0 }} // Smaller X offset here too
-            animate={videoControls}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-          >
-            <YouTube
-              className="h-full absolute w-full rounded-lg"
-              videoId="DZsIGQIWf48"
-              opts={{
-                height: "100%",
-                width: "100%",
-                playerVars: {
-                  autoplay: 0, // Disable autoplay initially
-                  controls: 1, // Show controls
-                },
-              }}
-              onReady={onPlayerReady} // Handle player readiness
-            />
-            {!isPlaying && (
-              <div className="absolute inset-0 flex items-center justify-center">
-                <button
-                  onClick={handlePlay}
-                  className="bg-primary p-6 rounded-full flex items-center justify-center"
-                >
-                  <svg
-                    className="w-8 h-8 text-white"
-                    fill="currentColor"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path d="M8 5v14l11-7z" />
-                  </svg>
-                </button>
-              </div>
-            )}
-          </motion.div>
+            <li>الكشاف نافعٌ ويساعد الآخَرين.</li>
+            <li>الكشاف صديقٌ للجميع, وأخٌ لكلِّ كشاف.</li>
+            <li>الكشاف شهمٌ ومهذَّب.</li>
+          </ul>
+          <ul className="list-disc space-y-5 pr-3">
+            <li>الكشاف محبٌّ للطبيعة, يرفق بحيواناتها ويحافظ على نباتِها.</li>
+            <li>الكشاف مطيعٌ ويُتقِنُ عمَلَه.</li>
+            <li>الكشاف يبتسم ولا يعبأ بالصِّعاب.</li>
+            <li>الكشاف مقتَصِد ويحافظ على المُلكية الخاصة والعامة.</li>
+            <li>
+              الكشافُ مؤمِنٌ بالله, مُحِبٌّ لوطنِه ومخلِصٌ لرؤسائه ومرؤوسيه.
+            </li>
+          </ul>
         </div>
       </div>
     </div>
   );
 };
 
-export default InfoAboutUs;
+export default PrmoiseAndlaw;

@@ -84,7 +84,6 @@ const leaders = [
 const GeneraalAuthority = () => {
   return (
     <div>
-      <Navbar />
       <LinkOfPage
         homeTitle="الهيئة العامة"
         breadcrumbs={[

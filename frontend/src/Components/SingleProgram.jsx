@@ -18,7 +18,7 @@ const SingleProgram = (props, { index }) => {
             delay: index * 0.1, // Staggered delay based on index
           }}
           whileHover={{ y: -20 }}
-          className="bg-primary w-80 shadow-xl flex flex-col  justify-start items-center text-white rounded-lg overflow-hidden"
+          className="bg-primary w-80  flex flex-col  justify-start items-center text-white rounded-lg overflow-hidden shadow-sm shadow-gray-800"
         >
           <div className="bg-white w-full flex justify-center items-center py-6 ">
             <img src={props.image} className="text-5xl text-primary h-40" />

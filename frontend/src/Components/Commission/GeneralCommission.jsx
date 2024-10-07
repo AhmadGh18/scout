@@ -5,7 +5,6 @@ import Navbar from "../Navbar";
 const GeneralCommission = () => {
   return (
     <div>
-      <Navbar />
       <LinkOfPage
         homeTitle="المفوضية العامة"
         breadcrumbs={[

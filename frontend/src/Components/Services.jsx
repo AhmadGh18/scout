@@ -11,6 +11,7 @@ import img2 from "../assets/images/jawala.png";
 import img3 from "../assets/images/mokhaym.png";
 import img4 from "../assets/images/ashbal.png";
 import img5 from "../assets/images/ftyan.png";
+import TopInfo from "./TopInfo";
 
 const Service = () => {
   const programs = [
@@ -48,15 +49,8 @@ const Service = () => {
   ];
 
   return (
-    <div className="bg-gray-100 font-Aljazeera mt-10">
-      <div className="flex items-center justify-center mt-4 md:mt-0">
-        <div
-          className="bg-primary text-white text-2xl p-4 md:px-12 md:py-4 shadow-md text-center tracking-wider font-semibold transition-transform duration-300 ease-in-out hover:scale-105"
-          style={{ clipPath: "polygon(0 0, 100% 0, 90% 100%, 10% 100%)" }}
-        >
-          برامجنا
-        </div>
-      </div>
+    <div className="bg-whiteColor font-Aljazeera pt-3 servecies">
+      <TopInfo title="برامجنا" />
       <div className="md:mx-auto mt-2 px-4 sm:px-6 p-3 ">
         <motion.div
           className="swiper-container"
@@ -76,7 +70,9 @@ const Service = () => {
           <Swiper
             spaceBetween={10}
             slidesPerView={1}
-            pagination={{ clickable: true }}
+            pagination={{
+              clickable: true,
+            }}
             navigation
             modules={[Autoplay, Pagination, Navigation]}
             autoplay={{ delay: 3000 }}

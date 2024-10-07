@@ -26,11 +26,10 @@ const Programs = () => {
               delay: 800, // Delay between slides in ms
               disableOnInteraction: false,
             }}
-            speed={600} // Speed of transition
-            loop={true} // Loop slides infinitely
+            speed={400}
+            loop={true}
             modules={[Autoplay, Navigation, Pagination]}
             className="mySwiper"
-            navigation
             breakpoints={{
               // Configure different slides per view for different screen sizes
               640: {

@@ -59,11 +59,12 @@ const Statistic = () => {
   }, [inView]);
 
   return (
-    <div className="mt-10 bg-gray-200">
+    <div className="bg-gray-200">
       <TopInfo title="بالأرقام" />
+
       <div
         ref={ref}
-        className="p-12 bg-gray-200 flex items-center "
+        className="p-12 flex items-center statistic"
         style={{
           backgroundSize: "cover",
           backgroundPosition: "center",
@@ -73,7 +74,9 @@ const Statistic = () => {
         <Swiper
           spaceBetween={20} // Adjust space between slides
           slidesPerView={1}
-          pagination={{ clickable: true }}
+          pagination={{
+            clickable: true,
+          }}
           navigation
           modules={[Autoplay, Pagination, Navigation]}
           autoplay={{ delay: 3000 }}

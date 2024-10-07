@@ -21,7 +21,6 @@ import shafek from "../../assets/LeadersPic/shafek.jpg";
 import waveBackground from "../../assets/images/wave-haikei33_7_-removebg-preview.png";
 import { motion, useAnimation, useScroll } from "framer-motion";
 import Navbar from "../Navbar";
-import TopInfoLinks from "../TopInfoLinks";
 import LinkOfPage from "../LinkOfPage";
 
 // Map images based on filenames
@@ -45,7 +44,6 @@ const images = {
 const GenralLeaders = () => {
   return (
     <div>
-      <Navbar />
       <LinkOfPage
         homeTitle="القيادة العامة"
         breadcrumbs={[

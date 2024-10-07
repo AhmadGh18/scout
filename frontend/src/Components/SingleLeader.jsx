@@ -5,7 +5,6 @@ import img from "../assets/LeadersPic/Abdolla.jpg";
 const SingleLeader = () => {
   return (
     <div>
-      <Navbar />
       <div className="flex flex-col md:flex-row-reverse items-start md:items-center mt-10 font-Aljazeera">
         <div className=" md:h-[60vh] md:w-1/2 flex flex-col items-center mt-0">
           <img
